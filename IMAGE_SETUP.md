@@ -9,6 +9,7 @@ To complete your portfolio website, you need to add the following image:
 **Location**: `/public/profile.jpg`
 
 **Specifications**:
+
 - Format: JPG, PNG, or WebP
 - Recommended size: 800x800 pixels (minimum)
 - Aspect ratio: 1:1 (square)
@@ -41,7 +42,8 @@ You can enhance your portfolio by adding more images:
 ### Project Screenshots
 
 Create folders for project images:
-```
+
+```text
 /public/projects/
   ├── firststep/
   ├── itw-computers/
@@ -50,7 +52,7 @@ Create folders for project images:
 
 ### Company Logos
 
-```
+```text
 /public/logos/
   ├── wso2.png
   └── hypercube.png
@@ -59,7 +61,7 @@ Create folders for project images:
 ## Image Optimization Tips
 
 1. **Compress images**: Use tools like [TinyPNG](https://tinypng.com/) or [Squoosh](https://squoosh.app/)
-2. **Use appropriate formats**: 
+2. **Use appropriate formats**:
    - JPG for photos
    - PNG for images with transparency
    - WebP for best compression
@@ -75,6 +77,7 @@ Once you add this file, your portfolio will be complete and ready to deploy!
 ## Need Help?
 
 If you encounter any issues with images:
+
 1. Check the file name matches exactly (case-sensitive)
 2. Ensure the image is in the `/public` folder, not in `/public/public`
 3. Clear your browser cache and restart the dev server

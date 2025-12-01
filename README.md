@@ -21,17 +21,20 @@ A modern, professional portfolio website built with Next.js 16, React, and TypeS
 ## 📦 Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/Isuranga-2001/portfolio.git
    cd portfolio
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Run the development server:
+
    ```bash
    npm run dev
    ```
@@ -72,7 +75,7 @@ The GitHub dark theme colors are defined in `src/app/globals.css`. You can custo
 
 ## 📄 Pages Structure
 
-```
+```text
 /                    - Home page with introduction and overview
 /experience          - Work experience overview
 /experience/wso2     - WSO2 internship details
