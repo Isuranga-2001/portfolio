@@ -29,7 +29,7 @@ export default function Home() {
     {
       title: "Freelance App Developer",
       description: "Developed desktop applications for government and corporate clients",
-      date: "2020 - 2022",
+      date: "Dec 2020 - Aug 2022",
       href: "/experience/freelance",
     }
   ];
@@ -138,16 +138,35 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-[var(--gh-fg-default)] mb-12">
             Career Highlights
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {highlights.map((highlight) => (
-              <Card
-                key={highlight.title}
-                title={highlight.title}
-                description={highlight.description}
-                date={highlight.date}
-                href={highlight.href}
-              />
-            ))}
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-[var(--gh-border-default)]"></div>
+            
+            {/* Timeline items */}
+            <div className="space-y-12">
+              {highlights.map((highlight, index) => (
+                <div key={highlight.title} className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-[var(--gh-accent-emphasis)] rounded-full border-4 border-[var(--gh-canvas-default)] z-10"></div>
+                  
+                  {/* Content */}
+                  <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
+                    <Link href={highlight.href} className="block group">
+                      <div className="border border-[var(--gh-border-default)] rounded-lg p-6 bg-[var(--gh-canvas-subtle)] hover:border-[var(--gh-accent-emphasis)] transition-colors">
+                        <div className="text-sm text-[var(--gh-fg-muted)] mb-2">{highlight.date}</div>
+                        <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-3 group-hover:text-[var(--gh-accent-fg)] transition-colors">
+                          {highlight.title}
+                        </h3>
+                        <p className="text-[var(--gh-fg-muted)]">{highlight.description}</p>
+                      </div>
+                    </Link>
+                  </div>
+                  
+                  {/* Spacer for alternating layout */}
+                  <div className="hidden md:block flex-1"></div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -158,97 +177,48 @@ export default function Home() {
               Education
             </h2>
             
-            {/* University of Moratuwa */}
-            <div className="border border-[var(--gh-border-default)] rounded-lg p-8 bg-[var(--gh-canvas-default)] mb-6">
-              <h3 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-2">
-                BSc (Hons.) in Information Technology
-              </h3>
-              <p className="text-[var(--gh-accent-fg)] mb-4">
-                Faculty of Information Technology, University of Moratuwa, Sri Lanka
-              </p>
-              <p className="text-[var(--gh-fg-muted)] mb-4">August 2022 - August 2026 (Expected)</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[var(--gh-fg-muted)]">
-                <div>
-                  <p className="font-medium text-[var(--gh-fg-default)]">Performance</p>
-                  <p>CGPA: 3.91/4.00 (Up to 5th Semester)</p>
-                </div>
-                <div>
-                  <p className="font-medium text-[var(--gh-fg-default)]">Honors</p>
-                  <p>Dean's List in all 5 semesters (GPAs: 3.89, 3.87, 3.95, 3.96, 3.90)</p>
-                </div>
+            <div className="space-y-6 mb-8">
+              {/* University of Moratuwa Card */}
+              <div className="border border-[var(--gh-border-default)] rounded-lg p-6 bg-[var(--gh-canvas-default)] hover:border-[var(--gh-accent-emphasis)] transition-colors">
+                <div className="text-sm text-[var(--gh-fg-muted)] mb-2">Aug 2022 - Aug 2026 (Expected)</div>
+                <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-2">
+                  BSc (Hons.) in Information Technology
+                </h3>
+                <p className="text-[var(--gh-fg-muted)] mb-3">University of Moratuwa, Sri Lanka</p>
+                <p className="text-sm text-[var(--gh-fg-muted)]">CGPA: 3.91/4.00 • Dean's List in all 5 semesters</p>
+              </div>
+
+              {/* Shibaura Institute Card */}
+              <div className="border border-[var(--gh-border-default)] rounded-lg p-6 bg-[var(--gh-canvas-default)] hover:border-[var(--gh-accent-emphasis)] transition-colors">
+                <div className="text-sm text-[var(--gh-fg-muted)] mb-2">Sep 2025 - Oct 2025</div>
+                <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-2">
+                  Research Exchange Program
+                </h3>
+                <p className="text-[var(--gh-fg-muted)] mb-3">Shibaura Institute of Technology (Toyosu Campus), Tokyo, Japan</p>
+                <p className="text-sm text-[var(--gh-fg-muted)]">Computer Vision • Machine Learning • Research Skills</p>
+              </div>
+
+              {/* St. Sylvester's Card */}
+              <div className="border border-[var(--gh-border-default)] rounded-lg p-6 bg-[var(--gh-canvas-default)] hover:border-[var(--gh-accent-emphasis)] transition-colors">
+                <div className="text-sm text-[var(--gh-fg-muted)] mb-2">Jan 2007 - Aug 2020</div>
+                <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-2">
+                  Primary/Secondary Education
+                </h3>
+                <p className="text-[var(--gh-fg-muted)] mb-3">St. Sylvester's College, Kandy</p>
+                <p className="text-sm text-[var(--gh-fg-muted)]">G.C.E. A/L Z-Score: 1.9762 • ICT Society President (2019/2020)</p>
               </div>
             </div>
 
-            {/* Shibaura Institute of Technology */}
-            <div className="border border-[var(--gh-border-default)] rounded-lg p-8 bg-[var(--gh-canvas-default)] mb-6">
-              <h3 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-2">
-                Research Exchange Program
-              </h3>
-              <p className="text-[var(--gh-accent-fg)] mb-4">
-                Shibaura Institute of Technology (Toyosu Campus), Tokyo, Japan
-              </p>
-              <p className="text-[var(--gh-fg-muted)] mb-4">September 2025 - October 2025</p>
-              <div>
-                <p className="font-medium text-[var(--gh-fg-default)] mb-2">Skills Gained</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                    Computer Vision
-                  </span>
-                  <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                    Machine Learning
-                  </span>
-                  <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                    Research Skills
-                  </span>
-                </div>
-              </div>
-            </div>            
-
-            {/* St. Sylvester's College */}
-            <div className="border border-[var(--gh-border-default)] rounded-lg p-8 bg-[var(--gh-canvas-default)]">
-              <h3 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-2">
-                Primary/Secondary Education
-              </h3>
-              <p className="text-[var(--gh-accent-fg)] mb-4">
-                St. Sylvester's College, Kandy
-              </p>
-              <p className="text-[var(--gh-fg-muted)] mb-4">January 2007 - August 2020</p>
-              
-              <div className="space-y-4">
-                <div>
-                  <p className="font-medium text-[var(--gh-fg-default)] mb-2">Academic Achievements</p>
-                  <ul className="space-y-1 text-[var(--gh-fg-muted)]">
-                    <li>• G.C.E. Advanced Level (2020): Z-Score 1.9762 (Common Stream: Physics, Combined Mathematics and ICT)</li>
-                    <li>• G.C.E. Ordinary Level: 6 A passes, 1 B pass, 2 C passes</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <p className="font-medium text-[var(--gh-fg-default)] mb-2">Leadership & Activities</p>
-                  <ul className="space-y-1 text-[var(--gh-fg-muted)]">
-                    <li>• President of the College ICT Society (2019/2020)</li>
-                    <li>• Editor of the College Astronomical Society (2019/2020)</li>
-                    <li>• Member of the College Science Society (2018 - 2020)</li>
-                    <li>• Member of the College Gymnastic Team (2007 - 2016)</li>
-                    <li>• Member of the College Carrom Team (2015 - 2017)</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <p className="font-medium text-[var(--gh-fg-default)] mb-2">Skills Developed</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                      Software Development
-                    </span>
-                    <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                      Problem Solving
-                    </span>
-                    <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                      Basic Computer Skills
-                    </span>
-                  </div>
-                </div>
-              </div>
+            <div className="text-center">
+              <Link
+                href="/education"
+                className="inline-flex items-center gap-2 text-[var(--gh-accent-fg)] hover:text-[var(--gh-accent-emphasis)] font-medium transition-colors"
+              >
+                View Full Education Details
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>

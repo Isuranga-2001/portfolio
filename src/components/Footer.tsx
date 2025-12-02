@@ -34,7 +34,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#education" className="text-[var(--gh-accent-fg)] hover:underline">
+                <Link href="/education" className="text-[var(--gh-accent-fg)] hover:underline">
                   Education
                 </Link>
               </li>

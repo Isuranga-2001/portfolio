@@ -84,7 +84,7 @@ export default function FreelancePage() {
                   Freelance App Developer
                 </h1>
                 <p className="text-xl text-[var(--gh-accent-fg)] mb-2">Self-Employed</p>
-                <p className="text-[var(--gh-fg-muted)]">2020 - 2022</p>
+                <p className="text-[var(--gh-fg-muted)]">Dec 2020 - Aug 2022</p>
               </div>
             </div>
           </div>
