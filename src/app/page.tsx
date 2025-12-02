@@ -46,7 +46,7 @@ export default function Home() {
                 Hi, I'm <span className="text-[var(--gh-accent-fg)]">Isuranga Warnasooriya</span>
               </h1>
               <p className="text-xl text-[var(--gh-fg-muted)] mb-8 leading-relaxed">
-                Associate Software Engineer & Final Year IT Undergraduate at University of Moratuwa
+                Associate Software Engineer & Final Year IT Undergraduate at University of Moratuwa, Sri Lanka
               </p>
               <p className="text-lg text-[var(--gh-fg-muted)] mb-8 leading-relaxed">
                 Passionate about Full Stack Development with expertise in Node.js, .NET, React, and Angular. 
@@ -104,13 +104,19 @@ export default function Home() {
                   href="/experience"
                   className="px-6 py-3 bg-[var(--gh-accent-emphasis)] text-white rounded-lg font-medium hover:bg-[var(--gh-accent-fg)] transition-colors"
                 >
-                  View Experience
+                  My Experiences
                 </Link>
                 <Link
                   href="/projects"
                   className="px-6 py-3 border border-[var(--gh-border-default)] text-[var(--gh-fg-default)] rounded-lg font-medium hover:bg-[var(--gh-canvas-subtle)] transition-colors"
                 >
-                  View Projects
+                  My Projects
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-6 py-3 border border-[var(--gh-border-default)] text-[var(--gh-fg-default)] rounded-lg font-medium hover:bg-[var(--gh-canvas-subtle)] transition-colors"
+                >
+                  Contact Me
                 </Link>
               </div>
             </div>

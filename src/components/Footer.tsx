@@ -43,6 +43,11 @@ export default function Footer() {
                   Projects
                 </Link>
               </li>
+              <li>
+                <Link href="/contact" className="text-[var(--gh-accent-fg)] hover:underline">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
