@@ -13,11 +13,18 @@ export default function ExperiencePage() {
       href: "/experience/wso2",
     },
     {
-      title: "Hypercube Consultancy Services",
+      title: "Hypercube Labs",
       role: "Full Stack Developer (Part-time)",
       period: "Jan 2024 - Nov 2024",
       description: "Developed robust backend features and user interfaces for consultancy clients using modern web technologies.",
       href: "/experience/hypercube",
+    },
+    {
+      title: "Freelance App Developer",
+      role: "Self-Employed",
+      period: "2020 - 2022",
+      description: "Developed custom desktop applications for government and corporate clients using .NET Framework and Microsoft SQL Server, including project management systems and expenditure tracking solutions.",
+      href: "/experience/freelance",
     },
   ];
 

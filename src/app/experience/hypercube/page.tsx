@@ -100,7 +100,7 @@ export default function HypercubePage() {
                   Full Stack Developer
                 </h1>
                 <p className="text-xl text-[var(--gh-accent-fg)] mb-2">
-                  Hypercube Consultancy Services
+                  Hypercube Labs
                 </p>
                 <p className="text-[var(--gh-fg-muted)]">Jan 2024 - Nov 2024 (Part-time)</p>
               </div>
@@ -114,7 +114,7 @@ export default function HypercubePage() {
             Overview
           </h2>
           <p className="text-lg text-[var(--gh-fg-muted)] leading-relaxed mb-8">
-            As a Part-time Full Stack Developer at Hypercube Consultancy Services, I had the 
+            As a Part-time Full Stack Developer at Hypercube Labs, I had the 
             opportunity to work directly with clients to deliver custom web solutions tailored to 
             their business needs. This role allowed me to gain hands-on experience with the complete 
             software development lifecycle, from initial client consultation to deployment and maintenance.
