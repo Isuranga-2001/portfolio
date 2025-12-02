@@ -86,48 +86,6 @@ export default function ProjectsPage() {
               />
             ))}
           </div>
-
-          {/* Achievements */}
-          <section className="mt-20 p-8 border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)]">
-            <h2 className="text-2xl font-bold text-[var(--gh-fg-default)] mb-6">
-              Competition Achievements
-            </h2>
-            <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <span className="text-2xl">🏆</span>
-                <div>
-                  <h3 className="font-semibold text-[var(--gh-fg-default)]">
-                    Champion - Intellicon 2.0 (2024) & Intellicon 1.0 (2022)
-                  </h3>
-                  <p className="text-[var(--gh-fg-muted)]">
-                    Inter-University AI/ML Ideathon by AIESEC SLIIT
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <span className="text-2xl">🥉</span>
-                <div>
-                  <h3 className="font-semibold text-[var(--gh-fg-default)]">
-                    4th Place - CodeRush 2023
-                  </h3>
-                  <p className="text-[var(--gh-fg-muted)]">
-                    Intra-Faculty Hackathon, University of Moratuwa
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <span className="text-2xl">🎯</span>
-                <div>
-                  <h3 className="font-semibold text-[var(--gh-fg-default)]">
-                    Finalist - NetCom 2023 & CodeFest 2023
-                  </h3>
-                  <p className="text-[var(--gh-fg-muted)]">
-                    Networking Competition & Hackathon
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
         </section>
       </div>
       <Footer />
