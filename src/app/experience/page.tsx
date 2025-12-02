@@ -22,7 +22,7 @@ export default function ExperiencePage() {
     {
       title: "Freelance App Developer",
       role: "Self-Employed",
-      period: "2020 - 2022",
+      period: "Dec 2020 - Aug 2022",
       description: "Developed custom desktop applications for government and corporate clients using .NET Framework and Microsoft SQL Server, including project management systems and expenditure tracking solutions.",
       href: "/experience/freelance",
     },
