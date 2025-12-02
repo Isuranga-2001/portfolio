@@ -21,7 +21,7 @@ export default function Home() {
       href: "/experience/wso2",
     },
     {
-      title: "Hypercube Consultancy",
+      title: "Hypercube",
       description: "Full Stack Developer building robust web applications for clients",
       date: "Jan 2024 - Nov 2024",
       href: "/experience/hypercube",
@@ -68,7 +68,7 @@ export default function Home() {
             </div>
 
             <div className="flex justify-center">
-              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-[var(--gh-accent-emphasis)] shadow-2xl shadow-[var(--gh-accent-emphasis)]/20">
+              <div className="relative w-96 h-96 rounded-full overflow-hidden shadow-2xl">
                 <Image
                   src="/profile.jpg"
                   alt="Isuranga Warnasooriya"
@@ -86,20 +86,20 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">3.91</div>
-                <div className="text-[var(--gh-fg-muted)]">CGPA / 4.00</div>
+                <div className="text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">7+</div>
+                <div className="text-[var(--gh-fg-muted)]">Years of Experience</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-success-fg)] mb-2">5</div>
-                <div className="text-[var(--gh-fg-muted)]">Dean's List Semesters</div>
+                <div className="text-4xl font-bold text-[var(--gh-success-fg)] mb-2">7</div>
+                <div className="text-[var(--gh-fg-muted)]">Programming Languages</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-attention-fg)] mb-2">2</div>
-                <div className="text-[var(--gh-fg-muted)]">Intellicon Championships</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">10+</div>
+                <div className="text-4xl font-bold text-[var(--gh-attention-fg)] mb-2">10+</div>
                 <div className="text-[var(--gh-fg-muted)]">Major Projects</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">15+</div>
+                <div className="text-[var(--gh-fg-muted)]">Technologies Mastered</div>
               </div>
             </div>
           </div>
