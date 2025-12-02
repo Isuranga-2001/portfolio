@@ -21,16 +21,17 @@ export default function Home() {
       href: "/experience/wso2",
     },
     {
-      title: "Hypercube",
+      title: "Hypercube Labs",
       description: "Full Stack Developer building robust web applications for clients",
       date: "Jan 2024 - Nov 2024",
       href: "/experience/hypercube",
     },
     {
-      title: "Champion - Intellicon 2.0",
-      description: "Inter-University AI/ML Ideathon by AIESEC SLIIT",
-      date: "2024",
-    },
+      title: "Freelance App Developer",
+      description: "Developed desktop applications for government and corporate clients",
+      date: "2020 - 2022",
+      href: "/experience/freelance",
+    }
   ];
 
   return (
