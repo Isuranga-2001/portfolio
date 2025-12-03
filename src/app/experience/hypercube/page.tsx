@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -91,8 +92,14 @@ export default function HypercubePage() {
             </Link>
             <div className="flex items-start gap-6">
               <div className="flex-shrink-0">
-                <div className="w-24 h-24 bg-[var(--gh-canvas-default)] border border-[var(--gh-border-default)] rounded-lg flex items-center justify-center">
-                  <span className="text-2xl font-bold text-[var(--gh-success-fg)]">HC</span>
+                <div className="w-24 h-24 bg-white border border-[var(--gh-border-default)] rounded-lg flex items-center justify-center p-3">
+                  <Image
+                    src="/logos/hypercube.jpg"
+                    alt="Hypercube Labs Logo"
+                    width={96}
+                    height={96}
+                    className="object-contain"
+                  />
                 </div>
               </div>
               <div>

@@ -6,7 +6,7 @@ import Card from "@/components/Card";
 
 export default function Home() {
   const skills = {
-    "Programming Languages": ["C#", "Python", "Java", "Go", "JavaScript", "TypeScript", "Ballerina"],
+    "Programming Languages": ["C#", "Python", "Java", "Go", "JavaScript", "TypeScript", "Ballerina", "C"],
     "Backend": ["ASP.NET Core", "Node.js", "NestJS", "Express", "Spring Boot", "FastAPI", "Flask"],
     "Frontend": ["React", "Next.js", "Angular", "Tailwind CSS", "React Native"],
     "Databases": ["MSSQL", "MySQL", "PostgreSQL", "Firebase"],
@@ -139,10 +139,10 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
               <div>
                 <div className="text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">7+</div>
-                <div className="text-[var(--gh-fg-muted)]">Years of Experience</div>
+                <div className="text-[var(--gh-fg-muted)]">Years of Coding</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-success-fg)] mb-2">7</div>
+                <div className="text-4xl font-bold text-[var(--gh-success-fg)] mb-2">7+</div>
                 <div className="text-[var(--gh-fg-muted)]">Programming Languages</div>
               </div>
               <div>
