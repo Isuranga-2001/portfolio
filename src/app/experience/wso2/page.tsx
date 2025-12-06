@@ -54,8 +54,14 @@ export default function WSO2Page() {
             </Link>
             <div className="flex items-start gap-6">
               <div className="flex-shrink-0">
-                <div className="w-24 h-24 bg-[var(--gh-canvas-default)] border border-[var(--gh-border-default)] rounded-lg flex items-center justify-center">
-                  <span className="text-3xl font-bold text-[var(--gh-accent-fg)]">WSO2</span>
+                <div className="w-24 h-24 bg-white border border-[var(--gh-border-default)] rounded-lg flex items-center justify-center p-3">
+                  <Image
+                    src="/logos/wso2.png"
+                    alt="WSO2 Logo"
+                    width={96}
+                    height={96}
+                    className="object-contain"
+                  />
                 </div>
               </div>
               <div>
