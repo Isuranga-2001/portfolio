@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Card from "@/components/Card";
+import SafeWidget from "@/components/SafeWidget";
 
 export default function Home() {
   const skills = {
@@ -158,22 +159,24 @@ export default function Home() {
         {/* Stats Section */}
         <section className="bg-[var(--gh-canvas-subtle)] py-12">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">7+</div>
-                <div className="text-[var(--gh-fg-muted)]">Years of Coding</div>
+                <div className="text-3xl md:text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">7+</div>
+                <div className="text-sm md:text-base text-[var(--gh-fg-muted)]">Coding Journey</div>
+                <div className="text-xs text-[var(--gh-fg-muted)] opacity-70">Years</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-success-fg)] mb-2">7+</div>
-                <div className="text-[var(--gh-fg-muted)]">Programming Languages</div>
+                <div className="text-3xl md:text-4xl font-bold text-[var(--gh-success-fg)] mb-2">1+</div>
+                <div className="text-sm md:text-base text-[var(--gh-fg-muted)]">Industry Experience</div>
+                <div className="text-xs text-[var(--gh-fg-muted)] opacity-70">Years</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-attention-fg)] mb-2">10+</div>
-                <div className="text-[var(--gh-fg-muted)]">Major Projects</div>
+                <div className="text-3xl md:text-4xl font-bold text-[var(--gh-attention-fg)] mb-2">5+</div>
+                <div className="text-sm md:text-base text-[var(--gh-fg-muted)]">Awards & Honors</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">15+</div>
-                <div className="text-[var(--gh-fg-muted)]">Technologies Mastered</div>
+                <div className="text-3xl md:text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">2</div>
+                <div className="text-sm md:text-base text-[var(--gh-fg-muted)]">Research Labs</div>
               </div>
             </div>
           </div>
@@ -182,13 +185,10 @@ export default function Home() {
         {/* Contribution Graph */}
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between">
-            <div>
-              <h2 className="text-3xl font-bold text-[var(--gh-fg-default)]">Contribution Graph (GitHub)</h2>
-              <p className="text-[var(--gh-fg-muted)]">Dark theme chart directly from ghchart</p>
-            </div>
+            <h2 className="text-3xl font-bold text-[var(--gh-fg-default)]">Contribution Graph (GitHub)</h2>
             <span className="text-xs px-2 py-1 rounded-full bg-[var(--gh-attention-subtle)] text-[var(--gh-attention-fg)] font-medium self-start sm:self-center">Live</span>
           </div>
-          <div className="mt-6 overflow-hidden rounded-md bg-[#0d1117]">
+          <div className="mt-6 overflow-hidden rounded-md">
             <img
               src="https://ghchart.rshah.org/4fb6f9/Isuranga-2001"
               alt="GitHub contribution graph for Isuranga-2001"
@@ -249,35 +249,17 @@ export default function Home() {
           </div>
 
           <div className="mt-8 space-y-6">
-            <div className="border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)] p-4 shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-lg font-semibold text-[var(--gh-fg-default)]">GitHub Stats</h3>
-                <span className="text-xs px-2 py-1 rounded-full bg-[var(--gh-attention-subtle)] text-[var(--gh-attention-fg)] font-medium">Live</span>
-              </div>
-              <div className="overflow-hidden rounded-md border border-[var(--gh-border-default)] bg-[var(--gh-canvas-default)]">
-                <img
-                  src="https://greptile-stats.vercel.app/api/widget/Isuranga-2001/private-stats"
-                  alt="GitHub stats for Isuranga-2001 from statsforgit"
-                  loading="lazy"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
+            <SafeWidget
+              src="https://greptile-stats.vercel.app/api/widget/Isuranga-2001/private-stats"
+              alt="GitHub stats for Isuranga-2001 from statsforgit"
+              title="GitHub Stats"
+            />
 
-            <div className="border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)] p-4 shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-lg font-semibold text-[var(--gh-fg-default)]">Contributions</h3>
-                <span className="text-xs px-2 py-1 rounded-full bg-[var(--gh-attention-subtle)] text-[var(--gh-attention-fg)] font-medium">Live</span>
-              </div>
-              <div className="overflow-hidden rounded-md border border-[var(--gh-border-default)] bg-[var(--gh-canvas-default)]">
-                <img
-                  src="https://greptile-stats.vercel.app/api/widget/Isuranga-2001/contributions"
-                  alt="GitHub contributions chart for Isuranga-2001 from statsforgit"
-                  loading="lazy"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
+            {/* <SafeWidget
+              src="https://greptile-stats.vercel.app/api/widget/Isuranga-2001/contributions"
+              alt="GitHub contributions chart for Isuranga-2001 from statsforgit"
+              title="Contributions"
+            /> */}
           </div>
         </section>
 
