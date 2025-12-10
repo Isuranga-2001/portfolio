@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Card from "@/components/Card";
+import SafeWidget from "@/components/SafeWidget";
 
 export default function Home() {
   const skills = {
@@ -15,22 +16,44 @@ export default function Home() {
 
   const highlights = [
     {
-      title: "WSO2 LLC",
-      description: "Intern Software Engineer contributing to open-source healthcare solutions",
-      date: "Feb 2025 - July 2025",
-      href: "/experience/wso2",
+      title: "Visiting Research Scholar",
+      subtitle: "Shibaura Institute of Technology, Japan",
+      description: "Conducted research on Sign Language Detection using Leap Motion Controllers and Computer Vision.",
+      date: "Sep 2025 - Oct 2025",
+      href: "/education",
+      icon: "globe",
     },
     {
-      title: "Hypercube Labs",
-      description: "Full Stack Developer building robust web applications for clients",
+      title: "Intern Software Engineer",
+      subtitle: "Internship at WSO2",
+      description: "Contributed to the Open Healthcare repository, implementing FHIR standards and enhancing interoperability for global healthcare systems.",
+      date: "Feb 2025 - July 2025",
+      href: "/experience/wso2",
+      icon: "briefcase",
+    },
+    {
+      title: "Full Stack Developer (Part-time)",
+      subtitle: "Hypercube Labs",
+      description: "Full Stack Developer building robust web applications for clients.",
       date: "Jan 2024 - Nov 2024",
       href: "/experience/hypercube",
+      icon: "code",
+    },
+    {
+      title: "Hackathon Champion",
+      subtitle: "Microsoft & AIESEC",
+      description: "Champion of Intellicon 2.0 (AI/ML Ideathon) and Island Finalist in Microsoft Imagine Cup 2024.",
+      date: "2024",
+      href: "/experience",
+      icon: "trophy",
     },
     {
       title: "Freelance App Developer",
-      description: "Developed desktop applications for government and corporate clients",
+      subtitle: "Self-Employed",
+      description: "Developed desktop applications for government and corporate clients.",
       date: "Dec 2020 - Aug 2022",
       href: "/experience/freelance",
+      icon: "laptop",
     }
   ];
 
@@ -46,7 +69,7 @@ export default function Home() {
                 Hi, I'm <span className="text-[var(--gh-accent-fg)]">Isuranga Warnasooriya</span>
               </h1>
               <p className="text-xl text-[var(--gh-fg-muted)] mb-8 leading-relaxed">
-                Associate Software Engineer & Final Year IT Undergraduate at University of Moratuwa, Sri Lanka
+                Final Year IT Undergraduate at University of Moratuwa, Sri Lanka
               </p>
               <p className="text-lg text-[var(--gh-fg-muted)] mb-8 leading-relaxed">
                 Passionate about Full Stack Development with expertise in Node.js, .NET, React, and Angular. 
@@ -104,7 +127,7 @@ export default function Home() {
                   href="/experience"
                   className="px-6 py-3 bg-[var(--gh-accent-emphasis)] text-white rounded-lg font-medium hover:bg-[var(--gh-accent-fg)] transition-colors"
                 >
-                  My Experiences
+                  Experience
                 </Link>
                 <Link
                   href="/projects"
@@ -136,22 +159,24 @@ export default function Home() {
         {/* Stats Section */}
         <section className="bg-[var(--gh-canvas-subtle)] py-12">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">7+</div>
-                <div className="text-[var(--gh-fg-muted)]">Years of Coding</div>
+                <div className="text-3xl md:text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">7+</div>
+                <div className="text-sm md:text-base text-[var(--gh-fg-muted)]">Coding Journey</div>
+                <div className="text-xs text-[var(--gh-fg-muted)] opacity-70">Years</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-success-fg)] mb-2">7+</div>
-                <div className="text-[var(--gh-fg-muted)]">Programming Languages</div>
+                <div className="text-3xl md:text-4xl font-bold text-[var(--gh-success-fg)] mb-2">1+</div>
+                <div className="text-sm md:text-base text-[var(--gh-fg-muted)]">Industry Experience</div>
+                <div className="text-xs text-[var(--gh-fg-muted)] opacity-70">Years</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-attention-fg)] mb-2">10+</div>
-                <div className="text-[var(--gh-fg-muted)]">Major Projects</div>
+                <div className="text-3xl md:text-4xl font-bold text-[var(--gh-attention-fg)] mb-2">5+</div>
+                <div className="text-sm md:text-base text-[var(--gh-fg-muted)]">Awards & Honors</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">15+</div>
-                <div className="text-[var(--gh-fg-muted)]">Technologies Mastered</div>
+                <div className="text-3xl md:text-4xl font-bold text-[var(--gh-accent-fg)] mb-2">2</div>
+                <div className="text-sm md:text-base text-[var(--gh-fg-muted)]">Research Labs</div>
               </div>
             </div>
           </div>
@@ -160,13 +185,10 @@ export default function Home() {
         {/* Contribution Graph */}
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between">
-            <div>
-              <h2 className="text-3xl font-bold text-[var(--gh-fg-default)]">Contribution Graph (GitHub)</h2>
-              <p className="text-[var(--gh-fg-muted)]">Dark theme chart directly from ghchart</p>
-            </div>
+            <h2 className="text-3xl font-bold text-[var(--gh-fg-default)]">Contribution Graph (GitHub)</h2>
             <span className="text-xs px-2 py-1 rounded-full bg-[var(--gh-attention-subtle)] text-[var(--gh-attention-fg)] font-medium self-start sm:self-center">Live</span>
           </div>
-          <div className="mt-6 overflow-hidden rounded-md bg-[#0d1117]">
+          <div className="mt-6 overflow-hidden rounded-md">
             <img
               src="https://ghchart.rshah.org/4fb6f9/Isuranga-2001"
               alt="GitHub contribution graph for Isuranga-2001"
@@ -227,35 +249,17 @@ export default function Home() {
           </div>
 
           <div className="mt-8 space-y-6">
-            <div className="border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)] p-4 shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-lg font-semibold text-[var(--gh-fg-default)]">GitHub Stats</h3>
-                <span className="text-xs px-2 py-1 rounded-full bg-[var(--gh-attention-subtle)] text-[var(--gh-attention-fg)] font-medium">Live</span>
-              </div>
-              <div className="overflow-hidden rounded-md border border-[var(--gh-border-default)] bg-[var(--gh-canvas-default)]">
-                <img
-                  src="https://greptile-stats.vercel.app/api/widget/Isuranga-2001/private-stats"
-                  alt="GitHub stats for Isuranga-2001 from statsforgit"
-                  loading="lazy"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
+            <SafeWidget
+              src="https://greptile-stats.vercel.app/api/widget/Isuranga-2001/private-stats"
+              alt="GitHub stats for Isuranga-2001 from statsforgit"
+              title="GitHub Stats"
+            />
 
-            <div className="border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)] p-4 shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-lg font-semibold text-[var(--gh-fg-default)]">Contributions</h3>
-                <span className="text-xs px-2 py-1 rounded-full bg-[var(--gh-attention-subtle)] text-[var(--gh-attention-fg)] font-medium">Live</span>
-              </div>
-              <div className="overflow-hidden rounded-md border border-[var(--gh-border-default)] bg-[var(--gh-canvas-default)]">
-                <img
-                  src="https://greptile-stats.vercel.app/api/widget/Isuranga-2001/contributions"
-                  alt="GitHub contributions chart for Isuranga-2001 from statsforgit"
-                  loading="lazy"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
+            {/* <SafeWidget
+              src="https://greptile-stats.vercel.app/api/widget/Isuranga-2001/contributions"
+              alt="GitHub contributions chart for Isuranga-2001 from statsforgit"
+              title="Contributions"
+            /> */}
           </div>
         </section>
 
@@ -272,17 +276,44 @@ export default function Home() {
             <div className="space-y-12">
               {highlights.map((highlight, index) => (
                 <div key={highlight.title} className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                  {/* Timeline dot */}
-                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-[var(--gh-accent-emphasis)] rounded-full border-4 border-[var(--gh-canvas-default)] z-10"></div>
+                  {/* Timeline dot with icon */}
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-10 h-10 bg-[var(--gh-accent-emphasis)] rounded-full border-4 border-[var(--gh-canvas-default)] z-10 flex items-center justify-center">
+                    {highlight.icon === "briefcase" && (
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    )}
+                    {highlight.icon === "trophy" && (
+                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 15c-1.5 0-2.75-1-3.25-2.5H5c0 2.5 2.5 4.5 5 5.5v3H8v2h8v-2h-2v-3c2.5-1 5-3 5-5.5h-3.75c-.5 1.5-1.75 2.5-3.25 2.5zM5 5h2c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2h2c1.1 0 2 .9 2 2v2c0 1.54-.73 2.91-1.86 3.79A4.997 4.997 0 0117 12.5h-1c0 1.93-1.57 3.5-3.5 3.5h-1c-1.93 0-3.5-1.57-3.5-3.5H7a4.997 4.997 0 01-2.14-.71C3.73 10.91 3 9.54 3 8V7c0-1.1.9-2 2-2zm0 2v1c0 .83.4 1.57 1.02 2.03.37-.91.92-1.72 1.62-2.38-.22-.36-.44-.71-.64-1.07V5H5v2zm14-2v1.58c-.2.36-.42.71-.64 1.07.7.66 1.25 1.47 1.62 2.38A2.49 2.49 0 0021 8V7h-2z"/>
+                      </svg>
+                    )}
+                    {highlight.icon === "globe" && (
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    )}
+                    {highlight.icon === "code" && (
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    )}
+                    {highlight.icon === "laptop" && (
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    )}
+                  </div>
                   
                   {/* Content */}
-                  <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
+                  <div className={`flex-1 pl-14 md:pl-0 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                     <Link href={highlight.href} className="block group">
                       <div className="border border-[var(--gh-border-default)] rounded-lg p-6 bg-[var(--gh-canvas-subtle)] hover:border-[var(--gh-accent-emphasis)] transition-colors">
                         <div className="text-sm text-[var(--gh-fg-muted)] mb-2">{highlight.date}</div>
-                        <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-3 group-hover:text-[var(--gh-accent-fg)] transition-colors">
+                        <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-1 group-hover:text-[var(--gh-accent-fg)] transition-colors">
                           {highlight.title}
                         </h3>
+                        <p className="text-sm text-[var(--gh-accent-fg)] mb-3">{highlight.subtitle}</p>
                         <p className="text-[var(--gh-fg-muted)]">{highlight.description}</p>
                       </div>
                     </Link>

@@ -68,7 +68,7 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://linkedin.com/in/isuranga-warnasooriya" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-[var(--gh-accent-fg)] hover:underline"
@@ -78,7 +78,7 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href="https://medium.com" 
+                  href="https://medium.com/@isurangawarnasooriya" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-[var(--gh-accent-fg)] hover:underline"

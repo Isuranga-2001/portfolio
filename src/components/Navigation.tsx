@@ -24,20 +24,30 @@ export default function Navigation() {
             Isuranga Warnasooriya
           </Link>
           
-          <div className="flex gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  isActive(item.path)
-                    ? "bg-[var(--gh-canvas-subtle)] text-[var(--gh-fg-default)]"
-                    : "text-[var(--gh-fg-muted)] hover:bg-[var(--gh-canvas-subtle)] hover:text-[var(--gh-fg-default)]"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+          <div className="flex items-center gap-1">
+            <div className="hidden md:flex gap-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive(item.path)
+                      ? "bg-[var(--gh-canvas-subtle)] text-[var(--gh-fg-default)]"
+                      : "text-[var(--gh-fg-muted)] hover:bg-[var(--gh-canvas-subtle)] hover:text-[var(--gh-fg-default)]"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 px-4 py-2 bg-[var(--gh-accent-emphasis)] text-white rounded-md text-sm font-medium hover:bg-[var(--gh-accent-fg)] transition-colors"
+            >
+              Download Resume
+            </a>
           </div>
         </div>
       </div>
