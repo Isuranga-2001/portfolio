@@ -157,6 +157,25 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Contribution Graph */}
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between">
+            <div>
+              <h2 className="text-3xl font-bold text-[var(--gh-fg-default)]">Contribution Graph (GitHub)</h2>
+              <p className="text-[var(--gh-fg-muted)]">Dark theme chart directly from ghchart</p>
+            </div>
+            <span className="text-xs px-2 py-1 rounded-full bg-[var(--gh-attention-subtle)] text-[var(--gh-attention-fg)] font-medium self-start sm:self-center">Live</span>
+          </div>
+          <div className="mt-6 overflow-hidden rounded-md bg-[#0d1117]">
+            <img
+              src="https://ghchart.rshah.org/4fb6f9/Isuranga-2001"
+              alt="GitHub contribution graph for Isuranga-2001"
+              loading="lazy"
+              className="w-full h-auto"
+            />
+          </div>
+        </section>
+
         {/* Skills Section */}
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
           <h2 className="text-3xl font-bold text-[var(--gh-fg-default)] mb-12">
@@ -183,6 +202,60 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* GitHub Stats Section */}
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between">
+            <div>
+              <h2 className="text-3xl font-bold text-[var(--gh-fg-default)]">GitHub Pulse</h2>
+              <p className="text-[var(--gh-fg-muted)]">Live widgets from statsforgit.com</p>
+            </div>
+            <a
+              href="https://www.statsforgit.com/Isuranga-2001"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[var(--gh-accent-fg)] hover:text-[var(--gh-accent-emphasis)] font-medium transition-colors"
+            >
+              View on statsforgit
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M11 3a1 1 0 011-1h5a1 1 0 011 1v5a1 1 0 11-2 0V5.414l-6.293 6.293a1 1 0 01-1.414-1.414L14.586 4H12a1 1 0 01-1-1z" clipRule="evenodd" />
+                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+              </svg>
+            </a>
+          </div>
+
+          <div className="mt-8 space-y-6">
+            <div className="border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)] p-4 shadow-sm">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-lg font-semibold text-[var(--gh-fg-default)]">GitHub Stats</h3>
+                <span className="text-xs px-2 py-1 rounded-full bg-[var(--gh-attention-subtle)] text-[var(--gh-attention-fg)] font-medium">Live</span>
+              </div>
+              <div className="overflow-hidden rounded-md border border-[var(--gh-border-default)] bg-[var(--gh-canvas-default)]">
+                <img
+                  src="https://greptile-stats.vercel.app/api/widget/Isuranga-2001/private-stats"
+                  alt="GitHub stats for Isuranga-2001 from statsforgit"
+                  loading="lazy"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+
+            <div className="border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)] p-4 shadow-sm">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-lg font-semibold text-[var(--gh-fg-default)]">Contributions</h3>
+                <span className="text-xs px-2 py-1 rounded-full bg-[var(--gh-attention-subtle)] text-[var(--gh-attention-fg)] font-medium">Live</span>
+              </div>
+              <div className="overflow-hidden rounded-md border border-[var(--gh-border-default)] bg-[var(--gh-canvas-default)]">
+                <img
+                  src="https://greptile-stats.vercel.app/api/widget/Isuranga-2001/contributions"
+                  alt="GitHub contributions chart for Isuranga-2001 from statsforgit"
+                  loading="lazy"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
