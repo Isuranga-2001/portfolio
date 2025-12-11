@@ -46,7 +46,7 @@ export default function Navigation() {
               rel="noopener noreferrer"
               className="ml-2 px-4 py-2 bg-[var(--gh-accent-emphasis)] text-white rounded-md text-sm font-medium hover:bg-[var(--gh-accent-fg)] transition-colors"
             >
-              Download Resume
+              View My Resume
             </a>
           </div>
         </div>
