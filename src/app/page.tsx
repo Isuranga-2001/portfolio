@@ -14,6 +14,89 @@ export default function Home() {
     "Cloud & DevOps": ["Azure", "AWS", "Docker", "GitHub Actions", "WSO2 Choreo"],
   };
 
+  const certificates = [
+    {
+      title: "Research Exchange Program 2025",
+      issuer: "Shibaura Institute of Technology, Tokyo, Japan",
+      year: "2025",
+      href: "https://1drv.ms/b/c/41b2c25f92a0ea09/ETrCvhRC5YZGoTFu1xiJg4oBIdmC8JEZlSOFzsHfjXAa0A?e=5NUkR2",
+      projectHref: "/education",
+    },
+    {
+      title: "Project Based Learning 2025",
+      issuer: "Shibaura Institute of Technology, Tokyo, Japan",
+      year: "2025",
+      href: "https://1drv.ms/b/c/41b2c25f92a0ea09/ETrCvhRC5YZGoTFu1xiJg4oBIdmC8JEZlSOFzsHfjXAa0A?e=5NUkR2",
+      projectHref: "/education",
+    },
+    {
+      title: "Machine Learning with Python",
+      issuer: "IBM",
+      year: "2024",
+      href: "https://www.coursera.org/account/accomplishments/verify/T6C4N5KXCJJW",
+    },
+    {
+      title: "Building Services Using ASP.NET",
+      issuer: "Coursera",
+      year: "2024",
+      href: "https://www.coursera.org/account/accomplishments/verify/QNKATGKBAM7B",
+    },
+    {
+      title: "Mathematics for Machine Learning: Linear Algebra",
+      issuer: "Imperial College London",
+      year: "2023",
+      href: "https://www.coursera.org/account/accomplishments/verify/6PE8D66BBXSG",
+    },
+    {
+      title: "Microsoft Azure Machine Learning",
+      issuer: "Microsoft",
+      year: "2023",
+      href: "https://www.coursera.org/account/accomplishments/verify/NGFXNCNZSLZ7",
+    },
+    {
+      title: "Hands-on Introduction to Linux Commands and Shell Scripting",
+      issuer: "IBM",
+      year: "2023",
+      href: "https://www.coursera.org/account/accomplishments/verify/JGBH97YPUCEU",
+    },
+    {
+      title: "Python for Beginners",
+      issuer: "University of Moratuwa",
+      year: "2022",
+      href: "https://open.uom.lk/lms/mod/customcert/verify_certificate.php",
+    },
+    {
+      title: "Certificate in Software Engineering",
+      issuer: "NIBM",
+      year: "2018",
+      href: "https://www.linkedin.com/in/isuranga-warnasooriya-588244187/details/certifications/",
+    },
+    {
+      title: "Certificate in English Language",
+      issuer: "NIBM",
+      year: "2018",
+      href: "https://www.linkedin.com/in/isuranga-warnasooriya-588244187/details/certifications/",
+    },
+  ];
+
+  const awards = [
+    {
+      title: "Island Finalist - Imagine Cup 2024",
+      event: "Microsoft Competition",
+      year: "2024",
+    },
+    {
+      title: "Champion - Intellicon 2.0",
+      event: "Inter-University AI/ML Ideathon by AIESEC SLIIT",
+      year: "2024",
+    },
+    {
+      title: "Champion - Intellicon 1.0",
+      event: "Inter-University AI/ML Ideathon by AIESEC SLIIT",
+      year: "2022",
+    },
+  ];
+
   const highlights = [
     {
       title: "Visiting Research Scholar",
@@ -380,44 +463,82 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Competition Achievements Section */}
+        {/* Achievements & Certifications Section */}
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
           <h2 className="text-3xl font-bold text-[var(--gh-fg-default)] mb-12">
-            Competition Achievements
+            Achievements & Certifications
           </h2>
-          <div className="space-y-6">
-            <div className="flex items-start gap-4 p-6 border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)]">
-              <span className="text-3xl">🏆</span>
-              <div>
-                <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-2">
-                  Champion - Intellicon 2.0 (2024) & Intellicon 1.0 (2022)
-                </h3>
-                <p className="text-[var(--gh-fg-muted)]">
-                  Inter-University AI/ML Ideathon by AIESEC SLIIT
-                </p>
-              </div>
+
+          {/* Certifications Subsection */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-6">Certifications</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {certificates.map((cert) => (
+                <div
+                  key={cert.title}
+                  className="flex items-start gap-4 p-6 border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)]"
+                >
+                  <div className="flex-shrink-0 w-10 h-10 bg-[var(--gh-accent-emphasis)] rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-lg font-semibold text-[var(--gh-fg-default)] mb-1">{cert.title}</h4>
+                    <p className="text-sm text-[var(--gh-fg-muted)] mb-1">{cert.issuer}</p>
+                    <p className="text-sm text-[var(--gh-fg-muted)] mb-3">{cert.year}</p>
+                    <div className="flex flex-wrap gap-3">
+                      <a
+                        href={cert.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-sm text-[var(--gh-accent-fg)] hover:text-[var(--gh-accent-emphasis)] font-medium transition-colors"
+                      >
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M11 3a1 1 0 011-1h5a1 1 0 011 1v5a1 1 0 11-2 0V5.414l-6.293 6.293a1 1 0 01-1.414-1.414L14.586 4H12a1 1 0 01-1-1z" clipRule="evenodd" />
+                          <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                        </svg>
+                      </a>
+                      {cert.projectHref && (
+                        <Link
+                          href={cert.projectHref}
+                          className="inline-flex items-center gap-1 text-sm text-[var(--gh-accent-fg)] hover:text-[var(--gh-accent-emphasis)] font-medium transition-colors"
+                        >
+                          View Project
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="flex items-start gap-4 p-6 border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)]">
-              <span className="text-3xl">🥉</span>
-              <div>
-                <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-2">
-                  4th Place - CodeRush 2023
-                </h3>
-                <p className="text-[var(--gh-fg-muted)]">
-                  Intra-Faculty Hackathon, University of Moratuwa
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 p-6 border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)]">
-              <span className="text-3xl">🎯</span>
-              <div>
-                <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-2">
-                  Finalist - NetCom 2023 & CodeFest 2023
-                </h3>
-                <p className="text-[var(--gh-fg-muted)]">
-                  Networking Competition & Hackathon
-                </p>
-              </div>
+          </div>
+
+          {/* Honors & Awards Subsection */}
+          <div>
+            <h3 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-6">Honors & Awards</h3>
+            <div className="space-y-6">
+              {awards.map((award) => (
+                <div
+                  key={award.title}
+                  className="flex items-start gap-4 p-6 border border-[var(--gh-border-default)] rounded-lg bg-[var(--gh-canvas-subtle)]"
+                >
+                  <div className="flex-shrink-0 w-10 h-10 bg-[var(--gh-attention-fg)] rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 15c-1.5 0-2.75-1-3.25-2.5H5c0 2.5 2.5 4.5 5 5.5v3H8v2h8v-2h-2v-3c2.5-1 5-3 5-5.5h-3.75c-.5 1.5-1.75 2.5-3.25 2.5zM5 5h2c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2h2c1.1 0 2 .9 2 2v2c0 1.54-.73 2.91-1.86 3.79A4.997 4.997 0 0117 12.5h-1c0 1.93-1.57 3.5-3.5 3.5h-1c-1.93 0-3.5-1.57-3.5-3.5H7a4.997 4.997 0 01-2.14-.71C3.73 10.91 3 9.54 3 8V7c0-1.1.9-2 2-2zm0 2v1c0 .83.4 1.57 1.02 2.03.37-.91.92-1.72 1.62-2.38-.22-.36-.44-.71-.64-1.07V5H5v2zm14-2v1.58c-.2.36-.42.71-.64 1.07.7.66 1.25 1.47 1.62 2.38A2.49 2.49 0 0021 8V7h-2z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-[var(--gh-fg-default)] mb-1">{award.title}</h4>
+                    <p className="text-sm text-[var(--gh-fg-muted)] mb-1">{award.event}</p>
+                    <p className="text-sm text-[var(--gh-fg-muted)]">{award.year}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
