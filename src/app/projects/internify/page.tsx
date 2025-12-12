@@ -1,8 +1,21 @@
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import FeaturedProjectGallery from "@/components/FeaturedProjectGallery";
 
 export default function InternifyPage() {
+  const basePath = "/projects/featured/internify";
+
+  const screenshotSections = [
+    {
+      title: "Application Screenshots",
+      images: [
+        { src: `${basePath}/img (1).jpg`, alt: "Internify Screenshot 1" },
+        { src: `${basePath}/img (2).jpg`, alt: "Internify Screenshot 2" },
+      ],
+    },
+  ];
+
   const features = [
     {
       title: "Internship Discovery",
@@ -310,6 +323,19 @@ export default function InternifyPage() {
             </div>
           </div>
         </section>
+
+        {/* Screenshots Gallery */}
+        {screenshotSections.length > 0 && (
+          <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
+            <h2 className="text-3xl font-bold text-[var(--gh-fg-default)] mb-12">
+              Screenshots
+            </h2>
+            <FeaturedProjectGallery
+              sections={screenshotSections}
+              projectTitle="Internify"
+            />
+          </section>
+        )}
 
         {/* Impact & Learning */}
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">

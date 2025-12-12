@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -111,12 +112,50 @@ export default function ITWComputersPage() {
             programming languages can be leveraged for their specific strengths within a single 
             application ecosystem.
           </p>
-          <p className="text-lg text-[var(--gh-fg-muted)] leading-relaxed">
+          <p className="text-lg text-[var(--gh-fg-muted)] leading-relaxed mb-12">
             As the Full Stack Developer and DevOps engineer, I designed and implemented the entire 
             system architecture, developed individual microservices in Go, Spring Boot, and Node.js, 
             built the Next.js frontend, and established a complete CI/CD pipeline for automated 
             deployment on AWS infrastructure.
           </p>
+
+          {/* System Architecture */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-6">
+              System Architecture
+            </h3>
+            <div className="border border-[var(--gh-border-default)] rounded-lg overflow-hidden bg-white">
+              <Image
+                src="/projects/featured/itw-computers/system.png"
+                alt="ITW Computers System Architecture - Microservices with API Gateway, User Service, Order Service, Product Service, and databases"
+                width={1200}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-[var(--gh-fg-muted)] mt-4 text-center">
+              System architecture showing Next.js frontend, Node.js API Gateway, and microservices with PostgreSQL, Supabase, and Firebase
+            </p>
+          </div>
+
+          {/* Deployment Architecture */}
+          <div>
+            <h3 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-6">
+              Deployment Architecture
+            </h3>
+            <div className="border border-[var(--gh-border-default)] rounded-lg overflow-hidden bg-white">
+              <Image
+                src="/projects/featured/itw-computers/deployment.png"
+                alt="ITW Computers AWS Deployment Architecture - Production and Test clusters with EKS, RDS, ALB"
+                width={1200}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-[var(--gh-fg-muted)] mt-4 text-center">
+              AWS deployment architecture with Production and Test clusters, EKS, RDS, and Application Load Balancer
+            </p>
+          </div>
         </section>
 
         {/* Architecture Section */}

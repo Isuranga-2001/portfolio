@@ -251,7 +251,7 @@ Sensors:
         "WIFI and Ethernet connectivity options",
         "Web application for remote monitoring"
       ],
-      screenshots: 6,
+      screenshots: 5,
       screenshotBasePath: "/projects/other/air-quality",
       links: {
         demo: "https://lnkd.in/g3R-KMga"
@@ -316,8 +316,8 @@ Established a daily monitoring protocol for KMC's three water treatment plants. 
         "Resource allocation optimization",
         "Project delay analysis"
       ],
-      screenshots: 8,
-      screenshotBasePath: "/projects/freelance/kmc-water"
+      screenshots: 7,
+      screenshotBasePath: "/projects/freelance/kmc-water",
     },
     {
       title: "MASL Digana Expenditure System",

@@ -2,8 +2,51 @@ import Link from "next/link";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import FeaturedProjectGallery from "@/components/FeaturedProjectGallery";
 
 export default function FirstStepPage() {
+  const basePath = "/projects/featured/firststep";
+
+  const screenshotSections = [
+    {
+      title: "Welcome Portal",
+      images: [
+        { src: `${basePath}/welcome/img (1).png`, alt: "Welcome Portal - Landing Page" },
+        { src: `${basePath}/welcome/img (2).png`, alt: "Welcome Portal - Features" },
+        { src: `${basePath}/welcome/img (3).png`, alt: "Welcome Portal - About" },
+      ],
+    },
+    {
+      title: "Seeker Portal",
+      images: [
+        { src: `${basePath}/seeker/img (1).jpeg`, alt: "Seeker Portal - Dashboard" },
+        { src: `${basePath}/seeker/img (2).png`, alt: "Seeker Portal - Job Search" },
+        { src: `${basePath}/seeker/img (3).png`, alt: "Seeker Portal - Applications" },
+        { src: `${basePath}/seeker/img (4).png`, alt: "Seeker Portal - Profile" },
+      ],
+    },
+    {
+      title: "Company Portal",
+      images: [
+        { src: `${basePath}/company/img (1).png`, alt: "Company Portal - Dashboard" },
+        { src: `${basePath}/company/img (2).png`, alt: "Company Portal - Job Listings" },
+        { src: `${basePath}/company/img (3).png`, alt: "Company Portal - Candidates" },
+        { src: `${basePath}/company/img (4).png`, alt: "Company Portal - Analytics" },
+        { src: `${basePath}/company/img (5).png`, alt: "Company Portal - Settings" },
+        { src: `${basePath}/company/img (6).png`, alt: "Company Portal - Reports" },
+      ],
+    },
+    {
+      title: "Mobile View",
+      images: [
+        { src: `${basePath}/mobile/img (1).jpg`, alt: "Mobile View - Home" },
+        { src: `${basePath}/mobile/img (2).jpg`, alt: "Mobile View - Navigation" },
+        { src: `${basePath}/mobile/img (3).jpg`, alt: "Mobile View - Jobs" },
+        { src: `${basePath}/mobile/img (4).jpg`, alt: "Mobile View - Profile" },
+      ],
+    },
+  ];
+
   const features = [
     {
       title: "Intelligent Skill Matching",
@@ -111,12 +154,33 @@ export default function FirstStepPage() {
             skills and career goals. As both the Full Stack Developer and Project Manager, I led 
             the development of this platform from conception to deployment.
           </p>
-          <p className="text-lg text-[var(--gh-fg-muted)] leading-relaxed">
+          <p className="text-lg text-[var(--gh-fg-muted)] leading-relaxed mb-12">
             The platform features an advanced skill-matching algorithm that considers multiple 
             factors including technical skills, experience level, location preferences, and career 
             aspirations. It automates the interview scheduling process and provides real-time 
             updates to all parties involved in the recruitment process.
           </p>
+
+          {/* System Architecture */}
+          <div className="mt-8">
+            <h3 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-6">
+              System Architecture
+            </h3>
+            <div className="relative w-full rounded-lg overflow-hidden border border-[var(--gh-border-default)] bg-white">
+              <Image
+                src="/projects/featured/firststep/System Architecture.png"
+                alt="FirstStep System Architecture"
+                width={1366}
+                height={768}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
+            <p className="text-sm text-[var(--gh-fg-muted)] mt-4 text-center">
+              FirstStep employs a modern cloud-native architecture with Angular frontend, ASP.NET Core backend, 
+              and Azure services for deployment, storage, and database management.
+            </p>
+          </div>
         </section>
 
         {/* Key Features */}
@@ -224,6 +288,19 @@ export default function FirstStepPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Screenshots Gallery */}
+        <section className="bg-[var(--gh-canvas-subtle)] py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-[var(--gh-fg-default)] mb-12">
+              Screenshots
+            </h2>
+            <FeaturedProjectGallery
+              sections={screenshotSections}
+              projectTitle="FirstStep"
+            />
           </div>
         </section>
 
