@@ -5,10 +5,31 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Card from "@/components/Card";
 import SafeWidget from "@/components/SafeWidget";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GithubStatusPopup from "@/components/GithubStatusPopup";
 
 export default function Home() {
+  // Log viewer details to Supabase via API on first page load
+  useEffect(() => {
+    async function logViewer() {
+      try {
+        const viewerData = {
+          user_agent: typeof window !== "undefined" ? window.navigator.userAgent : null,
+          visit_time: new Date().toISOString(),
+        };
+        await fetch("/api/log-viewer", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(viewerData),
+        });
+      } catch (e) {
+        // Fail silently
+      }
+    }
+    logViewer();
+    // Only run once per mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [showGithubStatus, setShowGithubStatus] = useState(false);
   const skills = {
     "Programming Languages": ["C#", "Python", "Java", "Go", "JavaScript", "TypeScript", "Ballerina", "C"],
