@@ -17,13 +17,18 @@ export default function Home() {
           user_agent: typeof window !== "undefined" ? window.navigator.userAgent : null,
           visit_time: new Date().toISOString(),
         };
-        await fetch("/api/log-viewer", {
+        const response = await fetch("/api/log-viewer", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(viewerData),
         });
+        if (!response.ok) {
+          // Optionally log error to console for debugging
+          console.error("Failed to log viewer:", response.status, await response.text());
+        }
       } catch (e) {
-        // Fail silently
+        // Optionally log error to console for debugging
+        console.error("Error logging viewer:", e);
       }
     }
     logViewer();
