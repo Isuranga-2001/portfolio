@@ -284,7 +284,7 @@ The game challenges players to navigate through levels while protecting crystals
       ],
       screenshots: 5,
       screenshotBasePath: "/projects/other/guardian-of-crystals",
-      embeddedVideo: "https://onedrive.live.com/embed?resid=41B2C25F92A0EA09%21153705&authkey=!AHilPYWBr-tE5AU",
+      embeddedVideo: "https://www.youtube.com/embed/ZDLM9fENVQk",
       links: {
         download: "https://1drv.ms/f/s!AgnqoJJfwrJBlckOFW-bBxkyfDpUNg?e=i035z0"
       }
