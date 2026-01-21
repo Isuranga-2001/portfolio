@@ -138,7 +138,7 @@ export default function Home() {
     },
     {
       title: "Intern Software Engineer",
-      subtitle: "Internship at WSO2",
+      subtitle: "WSO2",
       description: "Contributed to the Open Healthcare repository, implementing FHIR standards and enhancing interoperability for global healthcare systems.",
       date: "Feb 2025 - July 2025",
       href: "/experience/wso2",
