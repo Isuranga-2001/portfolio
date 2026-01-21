@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import Card from "@/components/Card";
-import SafeWidget from "@/components/SafeWidget";
 import { useState } from "react";
 import GithubStatusPopup from "@/components/GithubStatusPopup";
 
