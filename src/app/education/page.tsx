@@ -1,5 +1,7 @@
+"use client";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export default function Education() {
   return (
@@ -23,7 +25,7 @@ export default function Education() {
               Faculty of Information Technology, University of Moratuwa, Sri Lanka
             </p>
             <p className="text-[var(--gh-fg-muted)] mb-4">August 2022 - August 2026 (Expected)</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[var(--gh-fg-muted)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[var(--gh-fg-muted)] mb-4">
               <div>
                 <p className="font-medium text-[var(--gh-fg-default)]">Performance</p>
                 <p>CGPA: 3.91/4.00 (Up to 5th Semester)</p>
@@ -33,6 +35,15 @@ export default function Education() {
                 <p>Dean's List in all 5 semesters (GPAs: 3.89, 3.87, 3.95, 3.96, 3.90)</p>
               </div>
             </div>
+            <Link
+              href="/transcript.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-1 py-1 text-[var(--gh-accent-fg)] text-sm font-medium hover:text-[var(--gh-accent-emphasis)] transition-colors"
+              style={{ cursor: 'pointer' }}
+            >
+              View Transcript (Up to 5th Semester)
+            </Link>
           </div>
 
           {/* Shibaura Institute of Technology */}

@@ -3,33 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import Card from "@/components/Card";
-import SafeWidget from "@/components/SafeWidget";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import GithubStatusPopup from "@/components/GithubStatusPopup";
 
 export default function Home() {
-  // Log viewer details to Supabase via API on first page load
-  useEffect(() => {
-    async function logViewer() {
-      try {
-        const viewerData = {
-          user_agent: typeof window !== "undefined" ? window.navigator.userAgent : null,
-          visit_time: new Date().toISOString(),
-        };
-        await fetch("/api/log-viewer", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(viewerData),
-        });
-      } catch (e) {
-        // Fail silently
-      }
-    }
-    logViewer();
-    // Only run once per mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   const [showGithubStatus, setShowGithubStatus] = useState(false);
   const skills = {
     "Programming Languages": ["C#", "Python", "Java", "Go", "JavaScript", "TypeScript", "Ballerina", "C"],
@@ -133,7 +110,7 @@ export default function Home() {
     },
     {
       title: "Intern Software Engineer",
-      subtitle: "Internship at WSO2",
+      subtitle: "WSO2",
       description: "Contributed to the Open Healthcare repository, implementing FHIR standards and enhancing interoperability for global healthcare systems.",
       date: "Feb 2025 - July 2025",
       href: "/experience/wso2",
