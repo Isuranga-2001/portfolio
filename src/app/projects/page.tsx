@@ -34,10 +34,47 @@ export default function ProjectsPage() {
       category: "Software (RESTful)",
       date: "2024",
       href: "/projects/internify",
+      liveLink: "https://internifyfit.com/",
     },
   ];
 
   const openSourceProjects: ProjectDetails[] = [
+    {
+      title: "Portfolio Website",
+      description: "A modern, responsive personal portfolio website showcasing my projects, experience, and skills.",
+      fullDescription: `A modern, responsive personal portfolio website built with Next.js 16 and React 19. This portfolio showcases my professional journey, projects, education, and technical skills in an elegant and interactive design.
+
+The website features a GitHub-inspired dark theme with smooth animations and transitions. It includes dedicated sections for featured projects with detailed case studies, work experience timeline, education background, and a contact form.
+
+Key highlights:
+• Server-side rendering for optimal performance and SEO
+• Responsive design that works seamlessly across all devices
+• Interactive project modals with embedded videos and image galleries
+• Dark theme with custom CSS variables for consistent styling
+• Contact form with email integration
+• Clean, maintainable codebase with TypeScript
+
+This portfolio serves as both a showcase of my work and a demonstration of my frontend development capabilities using modern web technologies.`,
+      year: "2024",
+      association: "Personal Project",
+      category: "Software",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
+      skills: ["Frontend Development", "React", "Next.js", "TypeScript", "Tailwind CSS", "Responsive Design", "UI/UX"],
+      features: [
+        "Server-side rendering with Next.js 16",
+        "Modern React 19 with latest features",
+        "Fully responsive design",
+        "GitHub-inspired dark theme",
+        "Interactive project showcases with modals",
+        "Contact form integration",
+        "TypeScript for type safety"
+      ],
+      screenshots: 0,
+      screenshotBasePath: "",
+      links: {
+        github: "https://github.com/Isuranga-2001/portfolio"
+      }
+    },
     {
       title: "University Course Advisor",
       description: "A desktop application that helps Sri Lankan A/L students find eligible university programs based on their stream, subjects, Z-score, and district.",
@@ -184,42 +221,6 @@ Technologies:
 
   const otherProjects: ProjectDetails[] = [
     {
-      title: "Portfolio Website",
-      description: "A modern, responsive personal portfolio website showcasing my projects, experience, and skills.",
-      fullDescription: `A modern, responsive personal portfolio website built with Next.js 16 and React 19. This portfolio showcases my professional journey, projects, education, and technical skills in an elegant and interactive design.
-
-The website features a GitHub-inspired dark theme with smooth animations and transitions. It includes dedicated sections for featured projects with detailed case studies, work experience timeline, education background, and a contact form.
-
-Key highlights:
-• Server-side rendering for optimal performance and SEO
-• Responsive design that works seamlessly across all devices
-• Interactive project modals with embedded videos and image galleries
-• Dark theme with custom CSS variables for consistent styling
-• Contact form with email integration
-• Clean, maintainable codebase with TypeScript
-
-This portfolio serves as both a showcase of my work and a demonstration of my frontend development capabilities using modern web technologies.`,
-      year: "2024",
-      association: "Personal Project",
-      category: "Software",
-      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
-      skills: ["Frontend Development", "React", "Next.js", "TypeScript", "Tailwind CSS", "Responsive Design", "UI/UX"],
-      features: [
-        "Server-side rendering with Next.js 16",
-        "Modern React 19 with latest features",
-        "Fully responsive design",
-        "GitHub-inspired dark theme",
-        "Interactive project showcases with modals",
-        "Contact form integration",
-        "TypeScript for type safety"
-      ],
-      screenshots: 0,
-      screenshotBasePath: "",
-      links: {
-        github: "https://github.com/Isuranga-2001/portfolio"
-      }
-    },
-    {
       title: "Air Quality Monitoring System",
       description: "IoT-based indoor air quality monitoring system with real-time data visualization and alerts.",
       fullDescription: `An IoT-based indoor air quality monitoring system. This project is inspired by the need to help people working in factories or laboratories that can produce unhealthy air. Many people do not care or are not aware of the impact of air quality on their health and productivity. Managers also do not clearly understand the variation in air quality in their workplace.
@@ -254,7 +255,7 @@ Sensors:
       screenshots: 5,
       screenshotBasePath: "/projects/other/air-quality",
       links: {
-        demo: "https://lnkd.in/g3R-KMga"
+        github: "https://github.com/Isuranga-2001/AirQualityMonitor"
       }
     },
     {
@@ -454,6 +455,7 @@ Technologies that used in this application:
                 category={project.category}
                 date={project.date}
                 href={project.href}
+                liveLink={project.liveLink}
               />
             ))}
           </div>

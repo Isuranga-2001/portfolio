@@ -4,13 +4,14 @@ interface CardProps {
   title: string;
   description: string;
   href?: string;
+  liveLink?: string;
   tags?: string[];
   date?: string;
   category?: string;
   children?: React.ReactNode;
 }
 
-export default function Card({ title, description, href, tags, date, category, children }: CardProps) {
+export default function Card({ title, description, href, liveLink, tags, date, category, children }: Readonly<CardProps>) {
   const CardContent = (
     <div className="h-full border border-[var(--gh-border-default)] rounded-lg p-6 bg-[var(--gh-canvas-subtle)] hover:border-[var(--gh-border-muted)] transition-all hover:shadow-lg hover:shadow-[var(--gh-accent-emphasis)]/10">
       <div className="flex items-center justify-between mb-2">
@@ -42,11 +43,38 @@ export default function Card({ title, description, href, tags, date, category, c
         </div>
       )}
       {children}
-      {href && (
-        <div className="mt-4 text-[var(--gh-accent-fg)] font-medium flex items-center gap-2">
-          Learn more <span>→</span>
-        </div>
-      )}
+      <div className="flex flex-wrap gap-3 items-center mt-4">
+        {liveLink && (
+          <a
+            href={liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[var(--gh-accent-fg)] hover:text-[var(--gh-accent-emphasis)] font-medium transition-colors"
+          >
+            Live Demo
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        )}
+        {href && (
+          <div className="text-[var(--gh-accent-fg)] font-medium flex items-center gap-2">
+            Learn more <span>→</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 
