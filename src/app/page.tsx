@@ -381,6 +381,39 @@ export default function Home() {
           </div>
         </section>
 
+        {/* CV Section */}
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-20">
+          <div className="rounded-2xl border border-[var(--gh-border-default)] bg-[var(--gh-canvas-subtle)] p-8 sm:p-10">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div className="max-w-3xl">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[var(--gh-fg-default)] mb-3">
+                  CV & Availability
+                </h2>
+                <p className="text-[var(--gh-fg-muted)] leading-relaxed">
+                  Explore my resume for detailed experience, technical skills, research work, and achievements.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-5 py-3 bg-[var(--gh-accent-emphasis)] text-white rounded-lg font-medium hover:bg-[var(--gh-accent-fg)] transition-colors"
+                >
+                  View CV
+                </a>
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="inline-flex items-center px-5 py-3 border border-[var(--gh-border-default)] text-[var(--gh-fg-default)] rounded-lg font-medium hover:bg-[var(--gh-canvas-default)] transition-colors"
+                >
+                  Download CV
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Contact CTA Section */}
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-20">
           <div className="rounded-2xl border border-[var(--gh-border-default)] bg-[var(--gh-canvas-subtle)] p-8 sm:p-10 text-center">
