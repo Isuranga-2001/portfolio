@@ -7,6 +7,8 @@ import { MouseEvent, useEffect, useState } from "react";
 import GithubStatusPopup from "@/components/GithubStatusPopup";
 import ImageCard from "@/components/ImageCard";
 import EventComponent, { EventDetails } from "@/components/EventComponent";
+import Card from "@/components/Card";
+import { featuredProjects } from "@/data/featuredProjects";
 
 export default function Home() {
   const [showGithubStatus, setShowGithubStatus] = useState(false);
@@ -58,6 +60,42 @@ export default function Home() {
         "/events/wso2-internship/img (4).jpg",
       ]
     }
+  ];
+
+  const highlights = [
+    {
+      title: "Visiting Research Scholar",
+      subtitle: "Shibaura Institute of Technology, Japan",
+      description: "Conducted research on Sign Language Detection using Leap Motion Controllers and Computer Vision.",
+      date: "Sep 2025 - Oct 2025",
+      href: "/education",
+      icon: "globe",
+    },
+    {
+      title: "Intern Software Engineer",
+      subtitle: "WSO2",
+      description:
+        "Contributed to the Open Healthcare repository, implementing FHIR standards and enhancing interoperability for global healthcare systems.",
+      date: "Feb 2025 - July 2025",
+      href: "/experience/wso2",
+      icon: "briefcase",
+    },
+    {
+      title: "Full Stack Developer (Part-time)",
+      subtitle: "Hypercube Labs",
+      description: "Full Stack Developer building robust web applications for clients.",
+      date: "Jan 2024 - Nov 2024",
+      href: "/experience/hypercube",
+      icon: "code",
+    },
+    {
+      title: "Freelance App Developer",
+      subtitle: "Self-Employed",
+      description: "Developed desktop applications for government and corporate clients.",
+      date: "Dec 2020 - Aug 2022",
+      href: "/experience/freelance",
+      icon: "laptop",
+    },
   ];
 
   const openEvent = (event: EventDetails) => {
@@ -228,6 +266,107 @@ export default function Home() {
         {/* GitHub Status Popup */}
         <GithubStatusPopup open={showGithubStatus} onClose={() => setShowGithubStatus(false)} />
 
+        {/* Career Highlights Section */}
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
+          <h2 className="text-3xl font-bold text-[var(--gh-fg-default)] mb-12">Career Highlights</h2>
+          <div className="relative">
+            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-[var(--gh-border-default)]"></div>
+            <div className="space-y-12">
+              {highlights.map((highlight, index) => (
+                <div
+                  key={highlight.title}
+                  className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                >
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-10 h-10 bg-[var(--gh-accent-emphasis)] rounded-full border-4 border-[var(--gh-canvas-default)] z-10 flex items-center justify-center">
+                    {highlight.icon === "briefcase" && (
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    )}
+                    {highlight.icon === "trophy" && (
+                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 15c-1.5 0-2.75-1-3.25-2.5H5c0 2.5 2.5 4.5 5 5.5v3H8v2h8v-2h-2v-3c2.5-1 5-3 5-5.5h-3.75c-.5 1.5-1.75 2.5-3.25 2.5zM5 5h2c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2h2c1.1 0 2 .9 2 2v2c0 1.54-.73 2.91-1.86 3.79A4.997 4.997 0 0117 12.5h-1c0 1.93-1.57 3.5-3.5 3.5h-1c-1.93 0-3.5-1.57-3.5-3.5H7a4.997 4.997 0 01-2.14-.71C3.73 10.91 3 9.54 3 8V7c0-1.1.9-2 2-2zm0 2v1c0 .83.4 1.57 1.02 2.03.37-.91.92-1.72 1.62-2.38-.22-.36-.44-.71-.64-1.07V5H5v2zm14-2v1.58c-.2.36-.42.71-.64 1.07.7.66 1.25 1.47 1.62 2.38A2.49 2.49 0 0021 8V7h-2z" />
+                      </svg>
+                    )}
+                    {highlight.icon === "globe" && (
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    )}
+                    {highlight.icon === "code" && (
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    )}
+                    {highlight.icon === "laptop" && (
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    )}
+                  </div>
+
+                  <div className={`flex-1 pl-14 md:pl-0 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
+                    <Link href={highlight.href} className="block group">
+                      <div className="border border-[var(--gh-border-default)] rounded-lg p-6 bg-[var(--gh-canvas-subtle)] hover:border-[var(--gh-accent-emphasis)] transition-colors">
+                        <div className="text-sm text-[var(--gh-fg-muted)] mb-2">{highlight.date}</div>
+                        <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-1 group-hover:text-[var(--gh-accent-fg)] transition-colors">
+                          {highlight.title}
+                        </h3>
+                        <p className="text-sm text-[var(--gh-accent-fg)] mb-3">{highlight.subtitle}</p>
+                        <p className="text-[var(--gh-fg-muted)]">{highlight.description}</p>
+                      </div>
+                    </Link>
+                  </div>
+
+                  <div className="hidden md:block flex-1"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Projects Section */}
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-20">
+          <div className="flex items-center justify-between gap-4 mb-8">
+            <h2 className="text-3xl font-bold text-[var(--gh-fg-default)]">Featured Projects</h2>
+            <Link
+              href="/projects"
+              className="text-[var(--gh-accent-fg)] hover:text-[var(--gh-accent-emphasis)] font-medium transition-colors"
+            >
+              View All Projects
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredProjects.map((project) => (
+              <Card
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                tags={project.technologies}
+                category={project.category}
+                date={project.date}
+                href={project.href}
+                liveLink={project.liveLink}
+              />
+            ))}
+          </div>
+        </section>
+
         {/* Memories and Events Section */}
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
           <h2 className="text-3xl font-bold text-[var(--gh-fg-default)] mb-4">Milestones</h2>
@@ -239,6 +378,24 @@ export default function Home() {
             {visibleEvents.map((event) => (
               <ImageCard key={event.id} title={event.name} image={event.coverImage} onClick={() => openEvent(event)} />
             ))}
+          </div>
+        </section>
+
+        {/* Contact CTA Section */}
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-20">
+          <div className="rounded-2xl border border-[var(--gh-border-default)] bg-[var(--gh-canvas-subtle)] p-8 sm:p-10 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--gh-fg-default)] mb-4">
+              Let&apos;s Build Something Great Together
+            </h2>
+            <p className="text-[var(--gh-fg-muted)] mb-8 max-w-2xl mx-auto">
+              Have an idea, collaboration, or opportunity in mind? Reach out and let&apos;s talk.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-6 py-3 bg-[var(--gh-accent-emphasis)] text-white rounded-lg font-medium hover:bg-[var(--gh-accent-fg)] transition-colors"
+            >
+              Go To Contact Page
+            </Link>
           </div>
         </section>
 
