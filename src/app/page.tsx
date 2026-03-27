@@ -3,11 +3,91 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import GithubStatusPopup from "@/components/GithubStatusPopup";
+import ImageCard from "@/components/ImageCard";
+import EventComponent, { EventDetails } from "@/components/EventComponent";
 
 export default function Home() {
   const [showGithubStatus, setShowGithubStatus] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<EventDetails | null>(null);
+  const [showEventPopup, setShowEventPopup] = useState(false);
+  const [carouselStartIndex, setCarouselStartIndex] = useState(0);
+
+  const events: EventDetails[] = [
+    {
+      "id": "iciproob-2026",
+      "name": "ICIPROoB2026 Conference Presenter & Award Winner",
+      "date": "2026",
+      "location": "ICIPROoB2026 Conference",
+      "coverImage": "/events/iciproob-2026/img (1).jpg",
+      "description": "Participated in the ICIPROoB2026 conference where I presented my research project titled 'Hybrid Sensor-Fusion Approaches for ASL Recognition' and was honored with a student paper award. The research involved proposing a hybrid sensor-fusion framework that combined a Leap Motion Controller (LMC) and RGB cameras specifically for American Sign Language (ASL) recognition. The core focus of this work was addressing the 'information bottleneck' commonly found in unimodal systems by successfully integrating manual gestures with non-manual markers. To further improve accuracy and handle asynchronous data streams, I suggested the implementation of a Cross-Modal Attention architecture. This milestone heavily utilized my skills in Deep Learning, Sensor Fusion, LMC, and Computer Vision.",
+      "images": [
+        "/events/iciproob-2026/img (1).jpg",
+        "/events/iciproob-2026/img (2).jpg",
+        "/events/iciproob-2026/img (3).jpg",
+        "/events/iciproob-2026/img (4).jpg",
+        "/events/iciproob-2026/img (5).jpg"
+      ]
+    },
+    {
+      "id": "research-japan",
+      "name": "Research Exchange at Shibaura Institute of Technology",
+      "date": "2025",
+      "location": "Toyosu, Tokyo, Japan",
+      "coverImage": "/events/research-japan/img (5).jpg",
+      "description": "Served as a Visiting Research Scholar at the Shibaura Institute of Technology (Toyosu) in Tokyo, Japan. This international research experience allowed me to delve deeply into advanced computer vision, deep learning, and practical research collaboration in an international lab environment. During my time associated with SIT, I worked on a research project titled 'Hybrid Sensor-Fusion Approaches for ASL Recognition'. My work focused on addressing the limitations of existing systems, specifically the 'information bottleneck' of unimodal systems, by integrating manual gestures with non-manual markers to enhance recognition capabilities.",
+      "images": [
+        "/events/research-japan/img (1).jpg",
+        "/events/research-japan/img (2).jpg",
+        "/events/research-japan/img (3).jpg",
+        "/events/research-japan/img (4).jpg",
+        "/events/research-japan/img (5).jpg"
+      ]
+    },
+    {
+      "id": "wso2-internship",
+      "name": "Intern Software Engineer at WSO2",
+      "date": "Feb 2025 - July 2025",
+      "location": "WSO2 LLC",
+      "coverImage": "/events/wso2-internship/img (2).jpg",
+      "description": "Worked as an Intern Software Engineer at WSO2 LLC. During my tenure, I contributed significantly to open-source healthcare solution development utilizing Ballerina and Java. I gained extensive hands-on experience working with cutting-edge technologies including HAPI-FHIR, WSO2 Choreo, GitHub Actions, and React. My primary projects involved developing a FHIR Terminology Service for the Open Healthcare initiative to manage and perform healthcare terminology-based operations, where I utilized Ballerina for backend logic and integrated the system with Choreo for seamless cloud deployment. Additionally, I developed a Ballerina connector for HubSpot CRM as part of my onboarding, which involved writing comprehensive test cases and creating detailed documentation.",
+      "images": [
+        "/events/wso2-internship/img (2).jpg",
+        "/events/wso2-internship/img (3).jpg",
+        "/events/wso2-internship/img (4).jpg",
+      ]
+    }
+  ];
+
+  const openEvent = (event: EventDetails) => {
+    setSelectedEvent(event);
+    setShowEventPopup(true);
+  };
+
+  const closeEvent = () => {
+    setShowEventPopup(false);
+    setSelectedEvent(null);
+  };
+
+  useEffect(() => {
+    if (events.length <= 3) return;
+
+    const intervalId = setInterval(() => {
+      setCarouselStartIndex((prev) => (prev + 1) % events.length);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [events.length]);
+
+  const visibleEvents =
+    events.length > 3
+      ? [
+          events[carouselStartIndex % events.length],
+          events[(carouselStartIndex + 1) % events.length],
+          events[(carouselStartIndex + 2) % events.length],
+        ]
+      : events;
 
   return (
     <>
@@ -20,7 +100,7 @@ export default function Home() {
               <h1 className="text-5xl font-bold text-[var(--gh-fg-default)] mb-6 leading-tight">
                 Hi, I'm <span className="text-[var(--gh-accent-fg)]">Isuranga Warnasooriya</span>
               </h1>
-              <p className="text-xl text-[var(--gh-fg-muted)] mb-8 leading-relaxed">
+              <p className="text-xl sm:text-2xl font-bold mb-8 leading-relaxed">
                 Final Year IT Undergraduate at University of Moratuwa, Sri Lanka
               </p>
               <p className="text-lg text-[var(--gh-fg-muted)] mb-8 leading-relaxed">
@@ -147,6 +227,22 @@ export default function Home() {
 
         {/* GitHub Status Popup */}
         <GithubStatusPopup open={showGithubStatus} onClose={() => setShowGithubStatus(false)} />
+
+        {/* Memories and Events Section */}
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
+          <h2 className="text-3xl font-bold text-[var(--gh-fg-default)] mb-4">Milestones</h2>
+          <p className="text-[var(--gh-fg-muted)] mb-10 max-w-3xl">
+            Milestones from research, conferences, and engineering experiences that shaped my journey.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {visibleEvents.map((event) => (
+              <ImageCard key={event.id} title={event.name} image={event.coverImage} onClick={() => openEvent(event)} />
+            ))}
+          </div>
+        </section>
+
+        <EventComponent event={selectedEvent} isOpen={showEventPopup} onClose={closeEvent} />
 
       </div>
       <Footer />
