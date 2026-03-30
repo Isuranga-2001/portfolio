@@ -3,10 +3,18 @@
 import { useEffect, useCallback, useState } from "react";
 import Image from "next/image";
 
+export interface ProjectDescriptionBlock {
+  type: "text" | "image";
+  content: string;
+  alt?: string;
+  caption?: string;
+}
+
 export interface ProjectDetails {
   title: string;
   description: string;
   fullDescription: string;
+  descriptionBlocks?: ProjectDescriptionBlock[];
   year: string;
   association: string;
   category: string;
@@ -119,9 +127,42 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             <h3 className="text-lg font-semibold text-[var(--gh-fg-default)] mb-3">
               About
             </h3>
-            <div className="text-[var(--gh-fg-muted)] leading-relaxed whitespace-pre-line">
-              {project.fullDescription}
-            </div>
+            {project.descriptionBlocks && project.descriptionBlocks.length > 0 ? (
+              <div className="space-y-4">
+                {project.descriptionBlocks.map((block, index) =>
+                  block.type === "text" ? (
+                    <p
+                      key={index}
+                      className="text-[var(--gh-fg-muted)] leading-relaxed whitespace-pre-line"
+                    >
+                      {block.content}
+                    </p>
+                  ) : (
+                    <figure
+                      key={index}
+                      className="border border-[var(--gh-border-default)] rounded-lg overflow-hidden bg-white"
+                    >
+                      <Image
+                        src={block.content}
+                        alt={block.alt ?? `${project.title} architecture`}
+                        width={1600}
+                        height={900}
+                        className="w-full h-auto"
+                      />
+                      {block.caption && (
+                        <figcaption className="px-4 py-3 text-sm text-center text-[var(--gh-fg-muted)] bg-[var(--gh-canvas-subtle)]">
+                          {block.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  )
+                )}
+              </div>
+            ) : (
+              <div className="text-[var(--gh-fg-muted)] leading-relaxed whitespace-pre-line">
+                {project.fullDescription}
+              </div>
+            )}
           </div>
 
           {/* Features */}

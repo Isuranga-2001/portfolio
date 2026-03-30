@@ -1,9 +1,127 @@
 "use client";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import Link from "next/link";
+import ProjectModal, { ProjectDetails } from "@/components/ProjectModal";
+import EducationMilestoneCard, {
+  EducationMilestoneModel,
+  MilestoneProject,
+} from "@/components/EducationMilestoneCard";
+import {
+  bscAssociatedProjects,
+  getProjectByTitle,
+  schoolAssociatedProjects,
+} from "@/data/projects";
 
 export default function Education() {
+  const [selectedProject, setSelectedProject] = useState<ProjectDetails | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const semesterPerformance = [
+    "1st Semester SGPA: 3.89 (Dean's List)",
+    "2nd Semester SGPA: 3.87 (Dean's List)",
+    "3rd Semester SGPA: 3.95 (Dean's List)",
+    "4th Semester SGPA: 3.96 (Dean's List)",
+    "5th Semester SGPA: 3.90 (Dean's List)",
+    "6th Semester SGPA: 3.95 (Dean's List)",
+  ];
+
+  const handleMilestoneProjectClick = (project: MilestoneProject) => {
+    if (project.actionType !== "modal") {
+      return;
+    }
+
+    const linkedProject = getProjectByTitle(project.projectTitle ?? project.title);
+    if (linkedProject) {
+      setSelectedProject(linkedProject);
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
+  const milestones: EducationMilestoneModel[] = [
+    {
+      title: "BSc (Hons.) in Information Technology",
+      institution:
+        "Faculty of Information Technology, University of Moratuwa, Sri Lanka",
+      period: "August 2022 - August 2026 (Expected)",
+      performance: {
+        summary: "CGPA: 3.92/4.00 (Up to 6th Semester)",
+        semesterWise: semesterPerformance,
+      },
+      transcript: {
+        href: "/transcript.pdf",
+        label: "View Transcript (Up to 5th Semester)",
+      },
+      associatedProjects: bscAssociatedProjects,
+      skills: null,
+      achievements: null,
+      activities: [
+        "Developer of IES Labs, Faculty of IT",
+        "Developer of DevLabs, Faculty of IT",
+        "Member of FITMoment (Media Unit), Faculty of IT",
+      ],
+    },
+    {
+      title: "Research Scholor",
+      institution: "Shibaura Institute of Technology (Toyosu Campus), Tokyo, Japan",
+      period: "September 2025 - October 2025",
+      performance: null,
+      transcript: null,
+      associatedProjects: [
+        {
+          title: "Hybrid Sign Language Recognition Framework",
+          context:
+            "Research project submitted to ICIPROB 2026 (IEEE), awarded Best Student Paper",
+          actionType: "route",
+          href: "/projects/sign-lang",
+        },
+      ],
+      skills: ["Computer Vision", "Machine Learning", "Research Skills"],
+      achievements: [
+        {
+          text: "Research Exchange Program 2025",
+          subItems: null,
+        },
+        {
+          text: "Project Based Learning Program 2025",
+          subItems: null,
+        },
+      ],
+      activities: null,
+    },
+    {
+      title: "Primary/Secondary Education",
+      institution: "St. Sylvester's College, Kandy",
+      period: "January 2007 - August 2020",
+      performance: null,
+      transcript: null,
+      associatedProjects: schoolAssociatedProjects,
+      skills: ["Software Development", "Problem Solving", "Basic Computer Skills"],
+      achievements: [
+        {
+          text: "G.C.E. Advanced Level (2020)",
+          subItems: ["Z-Score 1.9762 (Common Stream)"],
+        },
+        {
+          text: "G.C.E. Ordinary Level (2017)",
+          subItems: null,
+        },
+      ],
+      activities: [
+        "President of the College ICT Society (2019/2020)",
+        "Editor of the College Astronomical Society (2019/2020)",
+        "Member of the College Science Society (2018 - 2020)",
+        "Member of the College Gymnastic Team (2007 - 2016)",
+        "Member of the College Carrom Team (2015 - 2017)",
+      ],
+    },
+  ];
+
   return (
     <>
       <Navigation />
@@ -16,109 +134,20 @@ export default function Education() {
             My academic journey and qualifications
           </p>
 
-          {/* University of Moratuwa */}
-          <div className="border border-[var(--gh-border-default)] rounded-lg p-8 bg-[var(--gh-canvas-subtle)] mb-6">
-            <h2 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-2">
-              BSc (Hons.) in Information Technology
-            </h2>
-            <p className="text-[var(--gh-accent-fg)] mb-4">
-              Faculty of Information Technology, University of Moratuwa, Sri Lanka
-            </p>
-            <p className="text-[var(--gh-fg-muted)] mb-4">August 2022 - August 2026 (Expected)</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[var(--gh-fg-muted)] mb-4">
-              <div>
-                <p className="font-medium text-[var(--gh-fg-default)]">Performance</p>
-                <p>CGPA: 3.91/4.00 (Up to 5th Semester)</p>
-              </div>
-              <div>
-                <p className="font-medium text-[var(--gh-fg-default)]">Honors</p>
-                <p>Dean's List in all 5 semesters (GPAs: 3.89, 3.87, 3.95, 3.96, 3.90)</p>
-              </div>
-            </div>
-            <Link
-              href="/transcript.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-1 py-1 text-[var(--gh-accent-fg)] text-sm font-medium hover:text-[var(--gh-accent-emphasis)] transition-colors"
-              style={{ cursor: 'pointer' }}
-            >
-              View Transcript (Up to 5th Semester)
-            </Link>
-          </div>
-
-          {/* Shibaura Institute of Technology */}
-          <div className="border border-[var(--gh-border-default)] rounded-lg p-8 bg-[var(--gh-canvas-subtle)] mb-6">
-            <h2 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-2">
-              Research Exchange Program
-            </h2>
-            <p className="text-[var(--gh-accent-fg)] mb-4">
-              Shibaura Institute of Technology (Toyosu Campus), Tokyo, Japan
-            </p>
-            <p className="text-[var(--gh-fg-muted)] mb-4">September 2025 - October 2025</p>
-            <div>
-              <p className="font-medium text-[var(--gh-fg-default)] mb-2">Skills Gained</p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                  Computer Vision
-                </span>
-                <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                  Machine Learning
-                </span>
-                <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                  Research Skills
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* St. Sylvester's College */}
-          <div className="border border-[var(--gh-border-default)] rounded-lg p-8 bg-[var(--gh-canvas-subtle)]">
-            <h2 className="text-2xl font-semibold text-[var(--gh-fg-default)] mb-2">
-              Primary/Secondary Education
-            </h2>
-            <p className="text-[var(--gh-accent-fg)] mb-4">
-              St. Sylvester's College, Kandy
-            </p>
-            <p className="text-[var(--gh-fg-muted)] mb-4">January 2007 - August 2020</p>
-            
-            <div className="space-y-4">
-              <div>
-                <p className="font-medium text-[var(--gh-fg-default)] mb-2">Academic Achievements</p>
-                <ul className="space-y-1 text-[var(--gh-fg-muted)]">
-                  <li>• G.C.E. Advanced Level (2020): Z-Score 1.9762 (Common Stream: Physics, Combined Mathematics and ICT)</li>
-                  <li>• G.C.E. Ordinary Level: 6 A passes, 1 B pass, 2 C passes</li>
-                </ul>
-              </div>
-
-              <div>
-                <p className="font-medium text-[var(--gh-fg-default)] mb-2">Leadership & Activities</p>
-                <ul className="space-y-1 text-[var(--gh-fg-muted)]">
-                  <li>• President of the College ICT Society (2019/2020)</li>
-                  <li>• Editor of the College Astronomical Society (2019/2020)</li>
-                  <li>• Member of the College Science Society (2018 - 2020)</li>
-                  <li>• Member of the College Gymnastic Team (2007 - 2016)</li>
-                  <li>• Member of the College Carrom Team (2015 - 2017)</li>
-                </ul>
-              </div>
-
-              <div>
-                <p className="font-medium text-[var(--gh-fg-default)] mb-2">Skills Developed</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                    Software Development
-                  </span>
-                  <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                    Problem Solving
-                  </span>
-                  <span className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]">
-                    Basic Computer Skills
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+          {milestones.map((milestone) => (
+            <EducationMilestoneCard
+              key={milestone.title}
+              milestone={milestone}
+              onProjectClick={handleMilestoneProjectClick}
+            />
+          ))}
         </section>
       </div>
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
       <Footer />
     </>
   );
