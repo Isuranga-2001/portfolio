@@ -78,6 +78,11 @@ export default function AboutPage() {
 
   const awards = [
     {
+      title: "Best Student Paper Award - ICIPROB 2026",
+      event: "4th International Conference on Image Processing and Robotics (IEEE)",
+      year: "2026",
+    },
+    {
       title: "Island Finalist - Imagine Cup 2024",
       event: "Microsoft Competition",
       year: "2024",

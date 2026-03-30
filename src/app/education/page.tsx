@@ -68,7 +68,15 @@ export default function Education() {
       period: "September 2025 - October 2025",
       performance: null,
       transcript: null,
-      associatedProjects: null,
+      associatedProjects: [
+        {
+          title: "Hybrid Sign Language Recognition Framework",
+          context:
+            "Research project submitted to ICIPROB 2026 (IEEE), awarded Best Student Paper",
+          actionType: "route",
+          href: "/projects/sign-lang",
+        },
+      ],
       skills: ["Computer Vision", "Machine Learning", "Research Skills"],
       achievements: null,
       activities: null,

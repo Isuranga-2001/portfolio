@@ -1,0 +1,44 @@
+Project Title:
+A Hybrid Sensor-Fusion Framework for Linguistically Complete Sign Language Recognition
+
+Duration:
+2025 - 2026
+
+Overview:
+This research was initiated during my academic period at Shibaura Institute of Technology, Japan, and later presented at ICIPROB 2026 (4th International Conference on Image Processing and Robotics - IEEE conference track), held in Sri Lanka.
+
+The work addresses a critical challenge in Sign Language Recognition (SLR): most existing systems capture only part of the language signal. Camera-based systems capture broad motion but lose depth and struggle in difficult environments, while sensor-based systems provide precise 3D hand trajectories but miss facial and body cues that encode grammar.
+
+Core Research Problem:
+How can we design an SLR system that jointly understands:
+1. Manual signals (hand shape, movement, orientation)
+2. Non-manual markers (facial expression, head movement, body posture)
+
+Without both, recognition can be lexically correct but grammatically wrong.
+
+Proposed System:
+The proposed architecture is a Hybrid Neuro-Symbolic Framework with three phases:
+
+Phase 1 - Cross-Modal Perception
+- Inputs: Leap Motion 3D hand skeleton stream + RGB camera stream
+- Method: Cross-Modal Attention Transformer for dynamic multimodal fusion
+- Output: Gloss-level predictions with confidence
+
+Phase 2 - Symbolic Grammar Validation
+- Method: Finite State Machine (FSM)-based grammar rule checking
+- Role: Validate syntax and non-manual marker consistency, then accept/re-evaluate outputs
+
+Phase 3 - Hybrid Translation and Refinement
+- Method: Rule-based translation templates with a lightweight fallback model
+- Output: Natural language sentence generation with improved grammatical consistency
+
+Research Contribution:
+- Identified major SLR research gaps in multimodal grammar-aware recognition
+- Proposed a complete architecture to bridge the gap between deep learning perception and symbolic linguistic validation
+- Framed an uncertainty-aware fusion direction for robust real-world deployment
+
+Recognition:
+The paper received the Best Student Paper Award at ICIPROB 2026.
+
+Publication Status:
+Presented at conference; IEEE Xplore publication link expected to be available soon.
