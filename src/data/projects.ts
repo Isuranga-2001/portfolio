@@ -538,22 +538,37 @@ export const bscAssociatedProjects: EducationMilestoneProject[] = [
     projectTitle: "Air Quality Monitoring System",
   },
   {
-    title: "FirstStep",
+    title: "FirstStep (A Job Matching Platform)",
     context: "Level 02 Software Project",
     actionType: "route",
     href: "/projects/firststep",
   },
   {
-    title: "ITW Computers",
+    title: "ITW Computers (Microservices-based POS System)",
     context: "Enterprise Application Development (Level 03)",
     actionType: "route",
     href: "/projects/itw-computers",
   },
   {
-    title: "University Course Advisor",
+    title: "University Course Advisor (An Expert System)",
     context:
       "Logic Programming and Artifical Cognitive Systems (Level 3)",
     actionType: "modal",
     projectTitle: "University Course Advisor",
+  },
+];
+
+export const schoolAssociatedProjects: EducationMilestoneProject[] = [
+  {
+    title: "QuizDesigner",
+    context: "School Project",
+    actionType: "modal",
+    projectTitle: "QuizDesigner",
+  },
+  {
+    title: "NeXCal",
+    context: "School Project",
+    actionType: "modal",
+    projectTitle: "NeXCal",
   },
 ];
