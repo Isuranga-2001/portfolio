@@ -164,7 +164,7 @@ export default function AboutPage() {
                 <div className="text-sm text-[var(--gh-fg-muted)] mb-2">Aug 2022 - Aug 2026 (Expected)</div>
                 <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-2">BSc (Hons.) in Information Technology</h3>
                 <p className="text-[var(--gh-fg-muted)] mb-3">University of Moratuwa, Sri Lanka</p>
-                <p className="text-sm text-[var(--gh-fg-muted)]">CGPA: 3.91/4.00 • Dean's List in all 5 semesters</p>
+                <p className="text-sm text-[var(--gh-fg-muted)]">CGPA: 3.92/4.00 • Dean's List in all 6 semesters</p>
               </div>
 
               <div className="border border-[var(--gh-border-default)] rounded-lg p-6 bg-[var(--gh-canvas-subtle)] hover:border-[var(--gh-accent-emphasis)] transition-colors">

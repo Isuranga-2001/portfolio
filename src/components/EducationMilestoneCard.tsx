@@ -102,6 +102,22 @@ export default function EducationMilestoneCard({
             </div>
           )}
 
+          {milestone.skills && milestone.skills.length > 0 && (
+            <div className="mb-4">
+              <p className="font-medium text-[var(--gh-fg-default)] mb-2">Skills Gained</p>
+              <div className="flex flex-wrap gap-2">
+                {milestone.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
           {milestone.transcript && (
             <Link
               href={milestone.transcript.href}
@@ -165,21 +181,6 @@ export default function EducationMilestoneCard({
         )}
       </div>
 
-      {milestone.skills && milestone.skills.length > 0 && (
-        <div className="mt-6">
-          <p className="font-medium text-[var(--gh-fg-default)] mb-2">Skills Gained</p>
-          <div className="flex flex-wrap gap-2">
-            {milestone.skills.map((skill) => (
-              <span
-                key={skill}
-                className="px-3 py-1 text-sm bg-[var(--gh-canvas-inset)] text-[var(--gh-fg-default)] rounded border border-[var(--gh-border-default)]"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

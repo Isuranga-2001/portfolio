@@ -60,10 +60,14 @@ export default function Education() {
       associatedProjects: bscAssociatedProjects,
       skills: null,
       achievements: null,
-      activities: null,
+      activities: [
+        "Developer of IES Labs, Faculty of IT",
+        "Developer of DevLabs, Faculty of IT",
+        "Member of FITMoment (Media Unit), Faculty of IT",
+      ],
     },
     {
-      title: "Research Exchange Program",
+      title: "Research Scholor",
       institution: "Shibaura Institute of Technology (Toyosu Campus), Tokyo, Japan",
       period: "September 2025 - October 2025",
       performance: null,
@@ -78,7 +82,16 @@ export default function Education() {
         },
       ],
       skills: ["Computer Vision", "Machine Learning", "Research Skills"],
-      achievements: null,
+      achievements: [
+        {
+          text: "Research Exchange Program 2025",
+          subItems: null,
+        },
+        {
+          text: "Project Based Learning Program 2025",
+          subItems: null,
+        },
+      ],
       activities: null,
     },
     {
@@ -91,8 +104,8 @@ export default function Education() {
       skills: ["Software Development", "Problem Solving", "Basic Computer Skills"],
       achievements: [
         {
-          text: "G.C.E. Advanced Level (2020): Z-Score 1.9762 (Common Stream)",
-          subItems: ["Physics", "Combined Mathematics", "ICT"],
+          text: "G.C.E. Advanced Level (2020)",
+          subItems: ["Z-Score 1.9762 (Common Stream)"],
         },
         {
           text: "G.C.E. Ordinary Level (2017)",
