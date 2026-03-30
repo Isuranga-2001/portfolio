@@ -19,15 +19,6 @@ export const featuredProjects: FeaturedProject[] = [
     href: "/projects/firststep",
   },
   {
-    title: "ITW Computers",
-    description:
-      "A microservices-based online retail shop featuring multi-language services and a full CI/CD pipeline.",
-    technologies: ["Go", "Spring Boot", "Node.js", "Next.js", "Docker", "AWS"],
-    category: "Software (Microservice)",
-    date: "2024",
-    href: "/projects/itw-computers",
-  },
-  {
     title: "Internify",
     description:
       "An internship tracking platform for IT undergraduates to discover opportunities and manage CVs.",

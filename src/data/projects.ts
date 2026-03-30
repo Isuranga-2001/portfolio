@@ -147,6 +147,89 @@ Technical Stack:
     note:
       "This project is a testament to the power of open-source collaboration in the healthcare sector, now serving as a prebuilt utility within WSO2's healthcare offerings.",
   },
+  
+  {
+    title: "ITW Computers",
+    description:
+      "A microservices-based online retail shop with polyglot services, complete CI/CD, and AWS deployment.",
+    fullDescription: `ITW Computers is a modern e-commerce platform built using a polyglot microservices architecture. The project demonstrates how Go, Spring Boot, and Node.js can be combined in one ecosystem by assigning each service to the language best suited for its workload.
+
+As the Full Stack Developer and DevOps engineer, I designed and implemented the architecture, built the Next.js frontend, developed core backend services, and set up the automated CI/CD workflow for cloud deployments.
+
+The architecture includes a Node.js API gateway, domain-driven microservices, distributed data stores, and containerized workloads orchestrated across AWS environments.`,
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "ITW Computers is a modern e-commerce platform built using a polyglot microservices architecture. The project demonstrates how Go, Spring Boot, and Node.js can be combined in one ecosystem by assigning each service to the language best suited for its workload.",
+      },
+      {
+        type: "text",
+        content:
+          "As the Full Stack Developer and DevOps engineer, I designed and implemented the architecture, built the Next.js frontend, developed core backend services, and set up the automated CI/CD workflow for cloud deployments.",
+      },
+      {
+        type: "image",
+        content: "/projects/featured/itw-computers/system.png",
+        alt: "ITW Computers system architecture",
+        caption:
+          "System architecture showing Next.js frontend, Node.js API gateway, microservices, and backing data platforms.",
+      },
+      {
+        type: "text",
+        content:
+          "The system uses a microservices model with dedicated services for product catalog, order management, user management, and payment workflows. Internal communication combines REST and gRPC patterns where appropriate.",
+      },
+      {
+        type: "image",
+        content: "/projects/featured/itw-computers/deployment.png",
+        alt: "ITW Computers deployment architecture",
+        caption:
+          "AWS deployment architecture with isolated production and testing environments, container orchestration, and managed services.",
+      },
+      {
+        type: "text",
+        content:
+          "The delivery pipeline is fully automated with GitHub Actions for build, test, image publishing, and deployment. Docker and Docker Compose are used for reliable local development, while AWS services support scalable runtime environments.",
+      },
+    ],
+    year: "2024",
+    association: "University of Moratuwa (Enterprise Application Development)",
+    category: "Software (Microservice)",
+    technologies: [
+      "Go",
+      "Spring Boot",
+      "Node.js",
+      "Next.js",
+      "Docker",
+      "AWS",
+      "Supabase",
+      "Firebase",
+      "PostgreSQL",
+      "gRPC",
+      "GitHub Actions",
+    ],
+    skills: [
+      "Microservices Architecture",
+      "Full-Stack Development",
+      "DevOps",
+      "Containerization",
+      "CI/CD",
+      "Cloud Deployment",
+      "Distributed Systems",
+    ],
+    features: [
+      "Polyglot microservices across Go, Spring Boot, and Node.js",
+      "Next.js frontend with SEO-friendly server-side rendering",
+      "API Gateway pattern for unified client communication",
+      "Containerized services with Docker and Docker Compose",
+      "Automated CI/CD with GitHub Actions",
+      "AWS-based deployment architecture for production and testing",
+      "Integrated data stack with PostgreSQL, Supabase, Firebase, and Redis caching",
+    ],
+    screenshots: 0,
+    screenshotBasePath: "",
+  },
   {
     title: "S3 to Google Drive",
     description:
@@ -546,8 +629,8 @@ export const bscAssociatedProjects: EducationMilestoneProject[] = [
   {
     title: "ITW Computers (Microservices-based POS System)",
     context: "Enterprise Application Development (Level 03)",
-    actionType: "route",
-    href: "/projects/itw-computers",
+    actionType: "modal",
+    projectTitle: "ITW Computers",
   },
   {
     title: "University Course Advisor (An Expert System)",

@@ -8,7 +8,7 @@ A modern, professional portfolio website built with Next.js 16, React, and TypeS
 - **Responsive**: Fully responsive design that works on all devices
 - **Fast Performance**: Built with Next.js for optimal performance and SEO
 - **Work Experience Pages**: Detailed pages for WSO2 and Hypercube experiences
-- **Project Showcases**: In-depth project pages for FirstStep, ITW Computers, and Internify
+- **Project Showcases**: In-depth project pages and popup details for featured and open-source projects
 - **Easy Navigation**: Smooth navigation with sticky header and organized sections
 
 ## 🛠️ Tech Stack
@@ -82,7 +82,6 @@ The GitHub dark theme colors are defined in `src/app/globals.css`. You can custo
 /experience/hypercube - Hypercube consultancy work details
 /projects            - Projects overview
 /projects/firststep  - FirstStep project details
-/projects/itw-computers - ITW Computers project details
 /projects/internify  - Internify project details
 ```
 
