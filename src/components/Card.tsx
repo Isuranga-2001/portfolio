@@ -12,6 +12,8 @@ interface CardProps {
 }
 
 export default function Card({ title, description, href, liveLink, tags, date, category, children }: Readonly<CardProps>) {
+  const useFullCardLink = Boolean(href && !liveLink);
+
   const CardContent = (
     <div className="h-full border border-[var(--gh-border-default)] rounded-lg p-6 bg-[var(--gh-canvas-subtle)] hover:border-[var(--gh-border-muted)] transition-all hover:shadow-lg hover:shadow-[var(--gh-accent-emphasis)]/10">
       <div className="flex items-center justify-between mb-2">
@@ -69,16 +71,24 @@ export default function Card({ title, description, href, liveLink, tags, date, c
             </svg>
           </a>
         )}
-        {href && (
-          <div className="text-[var(--gh-accent-fg)] font-medium flex items-center gap-2">
-            Learn more <span>→</span>
-          </div>
-        )}
+        {href &&
+          (useFullCardLink ? (
+            <div className="text-[var(--gh-accent-fg)] font-medium flex items-center gap-2">
+              Learn more <span>→</span>
+            </div>
+          ) : (
+            <Link
+              href={href}
+              className="inline-flex items-center gap-2 text-[var(--gh-accent-fg)] hover:text-[var(--gh-accent-emphasis)] font-medium transition-colors"
+            >
+              Learn more <span>→</span>
+            </Link>
+          ))}
       </div>
     </div>
   );
 
-  if (href) {
+  if (useFullCardLink && href) {
     return (
       <Link href={href} className="block h-full">
         {CardContent}
