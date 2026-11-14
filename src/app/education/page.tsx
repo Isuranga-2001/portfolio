@@ -80,7 +80,7 @@ export default function Education() {
           context:
             "Research project submitted to ICIPROB 2026 (IEEE), awarded Best Student Paper",
           actionType: "route",
-          href: "/projects/sign-lang",
+          href: "/researches/sign-lang",
         },
       ],
       skills: ["Computer Vision", "Machine Learning", "Research Skills"],

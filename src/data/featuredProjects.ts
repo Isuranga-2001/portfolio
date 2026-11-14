@@ -10,21 +10,6 @@ export interface FeaturedProject {
 
 export const featuredProjects: FeaturedProject[] = [
   {
-    title: "Hybrid Sign Language Recognition Framework",
-    description:
-      "Award-winning IEEE conference research proposing a hybrid neuro-symbolic framework for linguistically complete ASL recognition.",
-    technologies: [
-      "Computer Vision",
-      "Transformer",
-      "Sensor Fusion",
-      "FSM",
-      "ASL",
-    ],
-    category: "Research (IEEE)",
-    date: "2025 - 2026",
-    href: "/projects/sign-lang",
-  },
-  {
     title: "Internify",
     description:
       "An internship tracking platform for IT undergraduates to discover opportunities and manage CVs.",
