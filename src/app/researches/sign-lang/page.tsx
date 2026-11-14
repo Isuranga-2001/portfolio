@@ -3,8 +3,7 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-const ieeePublicationLink = "https://ieeexplore.ieee.org/";
-const showPublicationLink = false;
+const ieeePublicationLink = "https://ieeexplore.ieee.org/document/11497804";
 
 const researchGaps = [
   "No multimodal system captures full ASL grammar by combining manual and non-manual markers.",
@@ -46,10 +45,10 @@ export default function SignLanguageResearchPage() {
         <section className="bg-[var(--gh-canvas-subtle)] py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <Link
-              href="/projects"
+              href="/researches"
               className="inline-flex items-center gap-2 text-[var(--gh-accent-fg)] hover:underline mb-8"
             >
-              ← Back to Projects
+              ← Back to Researches
             </Link>
 
             <div className="flex items-start gap-6">
@@ -183,29 +182,23 @@ export default function SignLanguageResearchPage() {
                 >
                   View Paper (PDF)
                 </a>
-              </div>
-
-              <p className="text-[var(--gh-fg-muted)] leading-relaxed mb-2">
-                The paper has been presented at ICIPROB 2026 and is expected to be published on IEEE
-                Xplore soon. The official publication link will be made visible here once it is available.
-              </p>
-
-              {!showPublicationLink && (
-                <p className="text-sm text-[var(--gh-fg-muted)]">
-                  Status: Pending official IEEE Xplore publication.
-                </p>
-              )}
-
-              <div className="hidden">
                 <a
                   href={ieeePublicationLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[var(--gh-accent-fg)] hover:underline"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[var(--gh-border-default)] text-[var(--gh-accent-fg)] hover:bg-[var(--gh-canvas-subtle)] transition-colors"
                 >
-                  IEEE Publication
+                  View on IEEE Xplore
                 </a>
               </div>
+
+              <p className="text-[var(--gh-fg-muted)] leading-relaxed mb-2">
+                The paper was presented at ICIPROB 2026 and is now published on IEEE Xplore.
+              </p>
+
+              <p className="text-sm text-[var(--gh-fg-muted)]">
+                Status: Published in IEEE Xplore.
+              </p>
             </div>
           </div>
         </section>

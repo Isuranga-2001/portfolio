@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRef, useState } from "react";
 
 export type MilestoneProject = {
   title: string;
@@ -47,6 +48,23 @@ export default function EducationMilestoneCard({
   onProjectClick,
 }: Readonly<EducationMilestoneCardProps>) {
   const hasRightColumn = Boolean(milestone.associatedProjects?.length);
+  const isBscMilestone = milestone.title.startsWith("BSc ");
+  const projectListRef = useRef<HTMLDivElement>(null);
+  const [showMoreProjects, setShowMoreProjects] = useState(true);
+
+  const handleProjectListScroll = (event: React.UIEvent<HTMLDivElement>) => {
+    const list = event.currentTarget;
+    setShowMoreProjects(
+      list.scrollTop + list.clientHeight < list.scrollHeight - 1
+    );
+  };
+
+  const handleShowMoreProjects = () => {
+    projectListRef.current?.scrollBy({
+      top: projectListRef.current.clientHeight * 0.8,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="border border-[var(--gh-border-default)] rounded-lg p-8 bg-[var(--gh-canvas-subtle)] mb-6 last:mb-0">
@@ -136,7 +154,14 @@ export default function EducationMilestoneCard({
             {milestone.associatedProjects && milestone.associatedProjects.length > 0 && (
               <div className="mb-4">
                 <p className="font-medium text-[var(--gh-fg-default)] mb-3">Associated Projects</p>
-                <div className="space-y-3">
+                <div
+                  ref={projectListRef}
+                  className={`hide-scrollbar relative max-h-96 overflow-y-auto pr-2 ${
+                    isBscMilestone ? "lg:max-h-[32rem]" : ""
+                  }`}
+                  onScroll={isBscMilestone ? handleProjectListScroll : undefined}
+                >
+                  <div className="space-y-3">
                   {milestone.associatedProjects.map((project) => {
                     const projectBody = (
                       <>
@@ -174,6 +199,16 @@ export default function EducationMilestoneCard({
                       </button>
                     );
                   })}
+                  </div>
+                  {isBscMilestone && showMoreProjects && (
+                    <button
+                      type="button"
+                      onClick={handleShowMoreProjects}
+                      className="sticky bottom-3 left-1/2 z-10 mx-auto -mb-10 block -translate-x-1/2 rounded-full border border-[var(--gh-border-default)] bg-[var(--gh-canvas-default)] px-4 py-2 text-sm font-medium text-[var(--gh-fg-default)] shadow-lg transition-colors hover:border-[var(--gh-accent-emphasis)] hover:text-[var(--gh-accent-fg)]"
+                    >
+                      Show more
+                    </button>
+                  )}
                 </div>
               </div>
             )}

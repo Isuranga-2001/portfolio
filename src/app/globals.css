@@ -64,3 +64,12 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gh-fg-subtle);
 }
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

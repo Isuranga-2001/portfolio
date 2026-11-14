@@ -2,6 +2,64 @@ import type { ProjectDetails } from "@/components/ProjectModal";
 
 export const openSourceProjects: ProjectDetails[] = [
   {
+    title: "AirGuard",
+    description:
+      "An XGBoost-based machine learning system that predicts the next indoor air quality level from factory sensor readings and provides real-time predictions through a Streamlit app.",
+    fullDescription: `AirGuard is an indoor air quality prediction system that uses current factory sensor readings to predict the next IAQ level. The project is based on environmental data collected by the Air Quality Monitoring System project from the basement of the Faculty of Information Technology at the University of Moratuwa.
+
+The project includes a complete machine learning workflow, from cleaning and labeling raw sensor data to feature engineering, model training, hyperparameter tuning, evaluation, and explainability. A Streamlit application makes the trained model available for real-time predictions.
+
+Key Features:
+• Environment-calibrated labeling of temperature, pressure, humidity, CO2, and TVOC readings
+• Three-class IAQ prediction aligned with the observed factory environment
+• Lag, delta, time, and previous IAQ-level features for next-level prediction
+• SMOTE class balancing, stratified data splitting, and GridSearchCV tuning
+• SHAP global and per-prediction explainability visualisations
+• Streamlit interface for real-time indoor air quality predictions
+
+Technical Stack:
+• Python and Jupyter Notebooks
+• XGBoost and scikit-learn
+• pandas and NumPy
+• SHAP and imbalanced-learn
+• Streamlit`,
+    year: "2025-2026",
+    association: "Academic Project - BSc (Hons.) in Information Technology",
+    category: "Machine Learning",
+    technologies: [
+      "Python",
+      "XGBoost",
+      "scikit-learn",
+      "SHAP",
+      "Streamlit",
+      "pandas",
+      "NumPy",
+      "Jupyter Notebook",
+    ],
+    skills: [
+      "Machine Learning",
+      "Data Preprocessing",
+      "Feature Engineering",
+      "Model Tuning",
+      "Explainable AI",
+      "Data Visualisation",
+      "Streamlit Development",
+    ],
+    features: [
+      "Raw sensor data cleaning and IAQ labeling",
+      "Next-level IAQ prediction with XGBoost",
+      "Feature engineering with lag and delta features",
+      "Hyperparameter tuning and model evaluation",
+      "SHAP-based model explainability",
+      "Real-time prediction Streamlit application",
+    ],
+    screenshots: 0,
+    screenshotBasePath: "",
+    links: {
+      github: "https://github.com/Isuranga-2001/AirGuard",
+    },
+  },
+  {
     title: "Portfolio Website",
     description:
       "A modern, responsive personal portfolio website showcasing my projects, experience, and skills.",
@@ -355,50 +413,103 @@ Technologies:
 
 export const otherProjects: ProjectDetails[] = [
   {
-    title: "Air Quality Monitoring System",
+    title: "CloudMart",
     description:
-      "IoT-based indoor air quality monitoring system with real-time data visualization and alerts.",
-    fullDescription: `An IoT-based indoor air quality monitoring system. This project is inspired by the need to help people working in factories or laboratories that can produce unhealthy air. Many people do not care or are not aware of the impact of air quality on their health and productivity. Managers also do not clearly understand the variation in air quality in their workplace.
+      "A cloud-ready microservices e-commerce platform developed for Cloud Infrastructure Management, with containerisation, Kubernetes deployment, and AWS resource management.",
+    fullDescription: `CloudMart is a microservices-based e-commerce platform developed as an academic project for the IS 4630 Cloud Infrastructure Management module at the University of Moratuwa.
 
-Therefore, we developed a system that informs managers and employees about the variations in air quality using high-precision sensors and a web application.
+The system consists of product, order, user, notification, and frontend services. The project focuses on deploying a distributed application in the cloud through containerisation, Kubernetes orchestration, cloud-managed services, CI/CD automation, security, monitoring, and cost optimisation.
 
-Our system consists of a set of air quality monitoring devices that can be placed in different locations in the indoor area. The devices measure temperature, humidity, air pressure, CO2, and TVOC levels using high-quality sensors and send the data to a Firebase real-time database via WIFI or Ethernet. The user can access the data from any device using a web application that displays the live readings and the historical trends of the air quality parameters. The user can also manage multiple monitoring devices under his/her username and customize the settings and alerts according to his/her preferences.
-
-Our project can help improve the health and well-being of workers and create a safer and more comfortable indoor environment. By monitoring and analyzing indoor air quality, the user can identify the sources of pollution, take action to reduce them, and optimize the ventilation and temperature control systems. Our project also has potential applications in other indoor settings such as schools, hospitals, offices, homes, etc.
-
-Sensors:
-• ESP32 doit devkit v1 (Main microcontroller)
-• SGP30 - Air quality (CO2 and TVOC)
-• BMP280 - Air Pressure
-• SHTC3 - Humidity Sensor
-• DS18B20 - Temperature Sensor
-• ENC28J60 - Ethernet Module
-• RTC and SD card module`,
-    year: "2022 - 2023",
-    association: "University of Moratuwa",
-    category: "Hardware",
-    technologies: ["Node.js", "Firebase", "MQTT", "ESP32", "IoT Sensors"],
-    skills: [
-      "Problem Solving",
-      "Web Application Development",
-      "Internet of Things (IoT)",
-      "Air Quality Analysis",
+Key Features:
+• Five-service e-commerce microservices architecture with a React frontend
+• Docker-based local development and containerised deployments
+• Kubernetes manifests for deployments, services, ingress, configuration, secrets, and network policies
+• Cloud adapter pattern for managed databases, queues, and email services
+• Infrastructure-as-code and CI/CD workflows for repeatable deployments`,
+    year: "2026",
+    association: "Academic Project - BSc (Hons.) in Information Technology",
+    category: "Cloud Infrastructure",
+    technologies: [
+      "AWS",
+      "Terraform",
+      "Docker",
+      "Kubernetes",
+      "Python",
+      "Flask",
       "Node.js",
-      "MQTT",
-      "Firebase",
+      "React",
+    ],
+    skills: [
+      "Cloud Infrastructure Management",
+      "Infrastructure as Code",
+      "Microservices",
+      "Containerisation",
+      "Kubernetes",
+      "CI/CD",
+      "Cloud Security",
     ],
     features: [
-      "Real-time air quality monitoring with high-precision sensors",
-      "Multi-device management under single user account",
-      "Historical data trends and analysis",
-      "Customizable settings and alerts",
-      "WIFI and Ethernet connectivity options",
-      "Web application for remote monitoring",
+      "Five-service e-commerce microservices platform",
+      "Docker Compose local development environment",
+      "Kubernetes deployment manifests",
+      "AWS cloud adapter integrations",
+      "Infrastructure-as-code workflows",
+      "CI/CD, security, monitoring, and cost optimisation",
     ],
-    screenshots: 5,
-    screenshotBasePath: "/projects/other/air-quality",
+    screenshots: 0,
+    screenshotBasePath: "",
     links: {
-      github: "https://github.com/Isuranga-2001/AirQualityMonitor",
+      github: "https://github.com/Isuranga-2001/cloud_mart",
+    },
+  },
+  {
+    title: "QA Training App Automation Suite",
+    description:
+      "An automated API and UI test suite for the QA Training App, built with Serenity BDD, Cucumber, JUnit 5, and Maven.",
+    fullDescription: `The QA Training App Automation Suite is an academic software testing project for validating the QA Training App through automated API and user-interface tests.
+
+The suite uses Serenity BDD with Cucumber and JUnit 5 to express readable test scenarios and generate detailed reports. REST tests use Serenity REST-assured integration, while UI tests use the Serenity Screenplay pattern with WebDriver. It also includes database hooks, environment-based configuration, and Maven lifecycle integration for repeatable execution.
+
+Key Features:
+• Automated API and UI end-to-end test coverage
+• BDD scenarios written with Cucumber feature files
+• Serenity Screenplay and WebDriver browser testing
+• REST API testing with Serenity REST-assured integration
+• Database setup and cleanup hooks
+• Maven Failsafe execution and generated Serenity reports`,
+    year: "2025",
+    association: "Academic Project - BSc (Hons.) in Information Technology",
+    category: "Software Testing",
+    technologies: [
+      "Java",
+      "Serenity BDD",
+      "Cucumber",
+      "JUnit 5",
+      "Maven",
+      "REST-assured",
+      "Selenium WebDriver",
+    ],
+    skills: [
+      "Test Automation",
+      "Behavior-Driven Development",
+      "API Testing",
+      "UI Testing",
+      "End-to-End Testing",
+      "Test Reporting",
+      "Test Data Management",
+    ],
+    features: [
+      "Serenity BDD API and UI automation suite",
+      "Cucumber feature-based test scenarios",
+      "Screenplay and WebDriver browser tests",
+      "Database setup and cleanup hooks",
+      "Maven-based test execution",
+      "Detailed Serenity test reports",
+    ],
+    screenshots: 0,
+    screenshotBasePath: "",
+    links: {
+      github: "https://github.com/Isuranga-2001/qa_training_app",
     },
   },
   {
@@ -597,8 +708,97 @@ Technologies that used in this application:
   },
 ];
 
+export const hardwareProjects: ProjectDetails[] = [
+  {
+    title: "SPIRAL",
+    description:
+      "An Arduino-based RFID and SPI communication study implementing a three-stage practical investigation with an MFRC522 reader and protocol comparison.",
+    fullDescription: `SPIRAL is an academic embedded-systems project that investigates SPI communication using an Arduino Uno and an MFRC522 RFID reader.
+
+The project progresses through bare-metal SPI register access, an RFID application using the MFRC522 library, and a hardware comparison of SPI, I2C, and UART communication. It includes commented Arduino source code, wiring guidance, observation tables, diagrams, and a supporting report.
+
+Key Features:
+• Manual SPI register communication without an RFID library
+• RFID card detection and authorised-card access flow
+• SPI mode-mismatch experiments and register verification
+• On-hardware SPI, I2C, and UART timing comparison
+• Structured experiment procedures and technical report
+
+Technical Stack:
+• Arduino Uno
+• C++ / Arduino
+• MFRC522 RFID reader
+• SPI, I2C, and UART protocols`,
+    year: "2026",
+    association: "Academic Project - BSc (Hons.) in Information Technology",
+    category: "Embedded Systems",
+    technologies: ["C++", "Arduino", "Arduino Uno", "MFRC522", "SPI", "I2C", "UART"],
+    skills: [
+      "Embedded Systems",
+      "Microcontroller Programming",
+      "Serial Communication",
+      "RFID",
+      "Hardware Testing",
+      "Technical Documentation",
+    ],
+    features: [
+      "Bare-metal SPI implementation",
+      "MFRC522 RFID reader application",
+      "SPI mode-mismatch investigation",
+      "SPI, I2C, and UART benchmark",
+      "Experiment documentation and supporting report",
+    ],
+    screenshots: 0,
+    screenshotBasePath: "",
+    links: {
+      github: "https://github.com/Isuranga-2001/SPIRAL",
+    },
+  },
+  {
+    title: "Air Quality Monitoring System",
+    description:
+      "IoT-based indoor air quality monitoring system with real-time data visualization and alerts.",
+    fullDescription: `An IoT-based indoor air quality monitoring system for tracking environmental conditions in factories and laboratories.
+
+The system uses monitoring devices to measure temperature, humidity, air pressure, CO2, and TVOC levels. Readings are sent to Firebase via WiFi or Ethernet and displayed in a web application with historical trends, device management, and configurable alerts.
+
+Sensors:
+• ESP32 doit devkit v1
+• SGP30, BMP280, SHTC3, and DS18B20 sensors
+• ENC28J60 Ethernet module
+• RTC and SD card module`,
+    year: "2022 - 2023",
+    association: "University of Moratuwa",
+    category: "Hardware",
+    technologies: ["Node.js", "Firebase", "MQTT", "ESP32", "IoT Sensors"],
+    skills: [
+      "Problem Solving",
+      "Web Application Development",
+      "Internet of Things (IoT)",
+      "Air Quality Analysis",
+      "Node.js",
+      "MQTT",
+      "Firebase",
+    ],
+    features: [
+      "Real-time air quality monitoring",
+      "Multi-device management",
+      "Historical data trends and analysis",
+      "Customizable settings and alerts",
+      "WiFi and Ethernet connectivity",
+      "Web application for remote monitoring",
+    ],
+    screenshots: 5,
+    screenshotBasePath: "/projects/other/air-quality",
+    links: {
+      github: "https://github.com/Isuranga-2001/AirQualityMonitor",
+    },
+  },
+];
+
 export const modalProjects: ProjectDetails[] = [
   ...openSourceProjects,
+  ...hardwareProjects,
   ...otherProjects,
 ];
 
@@ -614,17 +814,30 @@ export type EducationMilestoneProject = {
 };
 
 export const bscAssociatedProjects: EducationMilestoneProject[] = [
-   {
-    title: "Air Quality Monitoring System",
-    context: "Level 01 Hardware Project",
+  {
+    title: "CloudMart (Cloud Infrastructure Management Project)",
+    context: "Cloud Infrastructure Management (Level 04)",
     actionType: "modal",
-    projectTitle: "Air Quality Monitoring System",
+    projectTitle: "CloudMart",
   },
   {
-    title: "FirstStep (A Job Matching Platform)",
-    context: "Level 02 Software Project",
-    actionType: "route",
-    href: "/projects/firststep",
+    title: "SPIRAL (Arduino RFID and SPI Communication Project)",
+    context: "Embedded Systems and Communication Protocols (Level 04)",
+    actionType: "modal",
+    projectTitle: "SPIRAL",
+  },
+  {
+    title: "AirGuard (Indoor Air Quality Prediction System)",
+    context:
+      "Machine Learning and Data Science (Level 04)",
+    actionType: "modal",
+    projectTitle: "AirGuard",
+  },
+  {
+    title: "QA Training App Automation Suite",
+    context: "Software Quality Assurance and Testing (Level 04)",
+    actionType: "modal",
+    projectTitle: "QA Training App Automation Suite",
   },
   {
     title: "ITW Computers (Microservices-based POS System)",
@@ -635,9 +848,21 @@ export const bscAssociatedProjects: EducationMilestoneProject[] = [
   {
     title: "University Course Advisor (An Expert System)",
     context:
-      "Logic Programming and Artifical Cognitive Systems (Level 3)",
+      "Logic Programming and Artifical Cognitive Systems (Level 03)",
     actionType: "modal",
     projectTitle: "University Course Advisor",
+  },
+  {
+    title: "FirstStep (A Job Matching Platform)",
+    context: "Level 02 Software Project",
+    actionType: "route",
+    href: "/projects/firststep",
+  },
+  {
+    title: "Air Quality Monitoring System",
+    context: "Level 01 Hardware Project",
+    actionType: "modal",
+    projectTitle: "Air Quality Monitoring System",
   },
 ];
 
