@@ -25,15 +25,6 @@ export const featuredProjects: FeaturedProject[] = [
     href: "/projects/sign-lang",
   },
   {
-    title: "FirstStep",
-    description:
-      "A comprehensive recruitment platform with skill-matching algorithms, interview scheduling, and automated deployment via Azure.",
-    technologies: ["ASP.NET Core", "Angular", "MSSQL", "Azure", "Entity Framework"],
-    category: "Software (RESTful)",
-    date: "2023 - 2024",
-    href: "/projects/firststep",
-  },
-  {
     title: "Internify",
     description:
       "An internship tracking platform for IT undergraduates to discover opportunities and manage CVs.",
@@ -42,5 +33,14 @@ export const featuredProjects: FeaturedProject[] = [
     date: "2024",
     href: "/projects/internify",
     liveLink: "https://internifyfit.com/",
+  },
+  {
+    title: "FirstStep",
+    description:
+      "A comprehensive recruitment platform with skill-matching algorithms, interview scheduling, and automated deployment via Azure.",
+    technologies: ["ASP.NET Core", "Angular", "MSSQL", "Azure", "Entity Framework"],
+    category: "Software (RESTful)",
+    date: "2023 - 2024",
+    href: "/projects/firststep",
   },
 ];

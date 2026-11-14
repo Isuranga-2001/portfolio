@@ -24,6 +24,8 @@ export default function Education() {
     "4th Semester SGPA: 3.96 (Dean's List)",
     "5th Semester SGPA: 3.90 (Dean's List)",
     "6th Semester SGPA: 3.95 (Dean's List)",
+    "7th Semester SGPA: 3.83 (Dean's List)",
+    "8th Semester SGPA: 3.83 (Dean's List)"
   ];
 
   const handleMilestoneProjectClick = (project: MilestoneProject) => {
@@ -48,9 +50,9 @@ export default function Education() {
       title: "BSc (Hons.) in Information Technology",
       institution:
         "Faculty of Information Technology, University of Moratuwa, Sri Lanka",
-      period: "August 2022 - August 2026 (Expected)",
+      period: "August 2022 - August 2026",
       performance: {
-        summary: "CGPA: 3.92/4.00 (Up to 6th Semester)",
+        summary: "CGPA: 3.90/4.00",
         semesterWise: semesterPerformance,
       },
       transcript: {

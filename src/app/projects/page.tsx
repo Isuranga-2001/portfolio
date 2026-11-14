@@ -6,7 +6,11 @@ import Footer from "@/components/Footer";
 import Card from "@/components/Card";
 import ProjectModal, { ProjectDetails } from "@/components/ProjectModal";
 import { featuredProjects } from "@/data/featuredProjects";
-import { openSourceProjects, otherProjects } from "@/data/projects";
+import {
+  hardwareProjects,
+  openSourceProjects,
+  otherProjects,
+} from "@/data/projects";
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<ProjectDetails | null>(null);
@@ -130,6 +134,48 @@ export default function ProjectsPage() {
                       )}
                     </div>
                   )}
+                  <div className="mt-4 text-[var(--gh-accent-fg)] font-medium flex items-center gap-2">
+                    View details <span>→</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Hardware and Electronic Projects */}
+          <h2 className="text-2xl font-bold text-[var(--gh-fg-default)] mb-8">
+            Hardware and Electronic
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {hardwareProjects.map((project) => (
+              <div
+                key={project.title}
+                onClick={() => handleOpenModal(project)}
+                className="cursor-pointer h-full"
+              >
+                <div className="h-full border border-[var(--gh-border-default)] rounded-lg p-6 bg-[var(--gh-canvas-subtle)] hover:border-[var(--gh-border-muted)] transition-all hover:shadow-lg hover:shadow-[var(--gh-accent-emphasis)]/10">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-sm text-[var(--gh-fg-muted)]">{project.year}</p>
+                    <span className="px-2 py-0.5 text-xs font-semibold bg-[var(--gh-success-emphasis)] text-white rounded">
+                      {project.category}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-[var(--gh-fg-default)] mb-3">
+                    {project.title}
+                  </h3>
+                  <p className="text-[var(--gh-fg-muted)] mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.slice(0, 4).map((technology) => (
+                      <span
+                        key={technology}
+                        className="px-3 py-1 text-xs font-medium bg-[var(--gh-accent-emphasis)] text-white rounded-full"
+                      >
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
                   <div className="mt-4 text-[var(--gh-accent-fg)] font-medium flex items-center gap-2">
                     View details <span>→</span>
                   </div>
